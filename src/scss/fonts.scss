@@ -1,0 +1,39 @@
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: url("../assets/fonts/Inter-Bold.woff2") format("woff2"), url("../assets/fonts/Inter-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: url("../assets/fonts/Inter-Medium.woff2") format("woff2"), url("../assets/fonts/Inter-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: url("../assets/fonts/Inter-Regular.woff2") format("woff2"), url("../assets/fonts/Inter-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tinos';
+	font-display: swap;
+	src: url("../assets/fonts/Tinos-Bold.woff2") format("woff2"), url("../assets/fonts/Tinos-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tinos';
+	font-display: swap;
+	src: url("../assets/fonts/Tinos-Regular.woff2") format("woff2"), url("../assets/fonts/Tinos-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}

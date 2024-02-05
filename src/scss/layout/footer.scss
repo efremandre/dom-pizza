@@ -1,0 +1,8 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+@use '../modules/logo';
+
+.footer {
+	padding: 2em 0;
+}

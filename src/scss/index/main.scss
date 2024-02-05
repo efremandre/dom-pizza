@@ -1,0 +1,11 @@
+@use '../base/variable' as var;
+@use 'hero';
+@use 'contact';
+
+.main {
+	flex: 1 1 auto;
+
+	&__contact {
+		padding: 3em 0;
+	}
+}

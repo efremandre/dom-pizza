@@ -1,0 +1,43 @@
+@use "sass:map";
+/// общие
+$mainBg: #202020; // background
+$accentColor: #bc120f; // акцентный цвет и цвет скроллбара
+$accentColorTwo: #9e9b98; // второй акцентный цвет и цвет скроллбара
+$widthContainer: 1600; // max-width
+
+$family: 'Inter', 'Arial', 'Helvetica', sans-serif; // font-family дефолтный шрифт
+$subFamily: 'Inter', 'Arial', 'Helvetica', sans-serif; // font-family допшрифт шрифт
+
+$generalBigTextSize: 24; // font-size текст который надо сделать чуть больше, чем основной
+$generalBigTextSizeMin: 12; // font-size текст который надо сделать чуть больше, чем основной для экрана 320px
+$generalTextSize: 18; // font-size основного текста
+$generalTextSizeMin: 12; // font-size основного текста для экрана 320px
+
+$generalLineHeight: 1.3em; // line-height основного текста
+$generalBigLineHeight: 1.3em; // line-height основного болшого текста
+$letterSpacing: 0;
+
+$generalColorText: #fff; // color основного текста
+$subColorText: #9e9b98; // color дополнительного текста
+
+/// заголовок главный
+$titleColor: #fff; // color
+$titleWeight: 700; // font-weight
+$titleFontSize: 72; // font-size
+$titleFontSizeMin: 24; // font-size
+$titleHeight: 1.3em; // line-height
+$titleTransform: none; // text-transform
+
+/// подзаголовок
+$subTitleColor: #9e9b98; // color
+$subTitleWeight: 700; // font-weight
+$subTitleFontSize: 72; // font-size
+$subTitleFontSizeMin: 24; // font-size screen 320px
+$subTitleHeight: 1.3em; // line-height
+
+/// бургер
+$colorBurger: #1D1B1B;
+
+/// кнопка вверх
+$darkColor: #1D1B1B; // border, background for :before, :after, background for button-up__link
+$lightColor: #FBFBFB; // hover background for :before, :after

@@ -1,0 +1,97 @@
+@use 'base/variable' as var;
+@use 'base/mixin' as mix;
+@use 'base/extentsions';
+
+html,
+body {
+	height: 100%;
+	scrollbar-color: var.$accentColorTwo var.$lightColor;
+	scrollbar-width: thin;
+	font-family: var.$family;
+	font-weight: 400;
+	line-height: var.$generalLineHeight;
+	letter-spacing: var.$letterSpacing;
+	color: var.$generalColorText;
+	scroll-behavior: smooth;
+	background: var.$mainBg;
+}
+
+* img {
+	display: block;
+	max-width: 100%;
+}
+
+h1 {
+	margin: 0;
+}
+
+button {
+	outline: none;
+	border: none;
+	background: none;
+}
+
+@media (any-hover: hover) {
+	button:hover {
+		cursor: pointer;
+	}
+}
+
+button:focus {
+	outline: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	font-family: var.$family;
+	text-decoration: none;
+	color: var.$lightColor;
+}
+
+a:focus {
+	outline: none;
+}
+
+.stop-scroll {
+	overflow: hidden;
+}
+
+.wrapper {
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 1920px;
+	margin: 0 auto;
+	@include mix.adaptivFont(var.$generalTextSize, var.$generalTextSizeMin);
+}
+
+.container {
+	width: 100%;
+	box-sizing: border-box;
+	max-width: #{var.$widthContainer + px};
+	margin: 0 auto;
+	padding: 0 1.3em;
+}
+
+.main-section {
+	padding: 20px 0;
+}
+
+.main-title {
+	@include mix.adaptivFont(var.$titleFontSize, var.$titleFontSizeMin);
+	color: var.$titleColor;
+	font-weight: var.$titleWeight;
+	line-height: var.$titleHeight;
+	letter-spacing: var.$letterSpacing;
+	text-transform: var.$titleTransform;
+}

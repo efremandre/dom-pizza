@@ -1,0 +1,19 @@
+.privacy {
+	padding: 20px;
+	&>h1 {
+		font-size: 30px;
+	}
+
+	&>h2 {
+		font-size: 18px;
+	}
+
+	&>p>a {
+		color: blue;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

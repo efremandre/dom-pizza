@@ -1,0 +1,21 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+
+$sizeAfterEl: 1.1em;
+
+.navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	width: 100%;
+	box-sizing: border-box;
+	padding: .5em 0;
+	color: var.$lightColor;
+
+	&__wrapper {
+		@include mix.displayFlex(flex, space-between, center);
+	}
+}

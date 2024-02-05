@@ -1,0 +1,7 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+
+.logo {
+	@include mix.displayFlex(flex, center, center);
+}

@@ -1,0 +1,35 @@
+<header class="header">
+	<div data-header class="header__navigation navigation">
+		<div class="container">
+			<div class="navigation__wrapper">
+				<div class="navigation__social social">
+					<ul class="social__list">
+						<li>
+							<a href="#" target="_blank" title="Telegram" class="social__link">
+								<img src="../../assets/images/icon/tg.svg" alt="Telegram">
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" title="WhatsApp" class="social__link">
+								<img src="../../assets/images/icon/wa.svg" alt="WhatsApp">
+							</a>
+						</li>
+						<li>
+							<a href=" #" target="_blank" title="Instagram" class="social__link">
+								<img src="../../assets/images/icon/inst.svg" alt="Instagram">
+							</a>
+						</li>
+					</ul>
+				</div>
+				@@include('../modules/logo.html', {
+				'class-logo-wrapper': 'navigation__logo',
+				'class-logo-link': 'navigation__logo-link'
+				})
+				<div class="navigation__cart cart">
+					<span class="cart__current">13</span>
+					<button class="cart__btn">Корзина</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

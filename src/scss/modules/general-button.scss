@@ -1,0 +1,27 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+
+.button {
+  @include mix.displayFlex(flex, center, center);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 270px;
+  padding: 1em;
+  @include mix.adaptivFont(var.$generalTextSize, var.$generalTextSizeMin);
+  color: var.$lightColor;
+  line-height: var.$generalLineHeight;
+  font-weight: 400;
+  background: var.$accentColorTwo;
+  border-radius: 8px;
+  transition: opacity .5s ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.button_accent {
+  background-color: var.$accentColorTwo;
+}
