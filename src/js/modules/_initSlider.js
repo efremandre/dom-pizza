@@ -1,38 +1,17 @@
-'use strict';
-import Swiper, {Navigation, Pagination, Autoplay, FreeMode, Lazy} from 'swiper';
+'use strict'
+import Swiper, { Autoplay, Lazy } from 'swiper'
 export function initSlider() {
-	const catalog = document.querySelector('.catalog__slider-container');
-	if (catalog) {
+	const sliderSection = document.querySelector('.slider')
+	if (sliderSection) {
 		const port = new Swiper('.mySwiper', {
-			modules:[Navigation, Pagination, Autoplay, FreeMode, Lazy],
+			modules: [Autoplay, Lazy],
 			lazy: true,
 			loop: true,
 			speed: 1000,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-				dynamicBullets: true
-			},
+			slidesPerView: 1,
 			autoplay: {
-				delay: 10000,
+				delay: 7000,
 			},
-			breakpoints: {
-				319: {
-					slidesPerView: 1,
-					spaceBetween: 20,
-				},
-				569: {
-					slidesPerView: 2,
-				},
-				989: {
-					slidesPerView: 3,
-					spaceBetween: 30,
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					}
-				},
-			},
-		});
+		})
 	}
 }

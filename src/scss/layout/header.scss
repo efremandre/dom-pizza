@@ -14,6 +14,7 @@ $sizeAfterEl: 1.1em;
 	box-sizing: border-box;
 	padding: .5em 0;
 	color: var.$lightColor;
+	background: var.$mainBg;
 
 	&__wrapper {
 		@include mix.displayFlex(flex, space-between, center);

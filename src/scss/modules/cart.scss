@@ -10,11 +10,13 @@
 	font-size: 36px;
 	color: var.$generalColorText;
 	background: var.$accentColor;
-	transition: opacity .5s;
+	transition: background .5s;
 
-	&:hover {
-		cursor: pointer;
-		opacity: .7;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			background: green;
+		}
 	}
 
 	&__current {

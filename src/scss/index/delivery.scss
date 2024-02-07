@@ -1,0 +1,21 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+
+.delivery {
+	margin: 68px 0;
+	text-transform: uppercase;
+	text-align: center;
+
+	&__description {
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__button-wrapper {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+}

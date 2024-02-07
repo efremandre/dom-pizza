@@ -1,0 +1,25 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+@use '../modules/button-dawn';
+
+.slider {
+	background: #e0e3eb;
+
+	& .container {
+		padding: 0;
+	}
+}
+
+.swiper-slide {
+	position: relative;
+	display: grid;
+	place-content: center;
+	align-items: center;
+	min-height: 300px;
+
+	&>img {
+		position: relative;
+		z-index: 11;
+	}
+}

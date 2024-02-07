@@ -5,7 +5,6 @@
 .form-container {
 	position: relative;
 	overflow: hidden;
-	border-radius: 5px;
 }
 
 .form-preloader {
@@ -78,54 +77,59 @@
 }
 
 .form {
+	text-transform: uppercase;
+
+	&__inputs {
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
 	&__input {
 		position: relative;
 
-		&>input,
-		&>textarea {
+		&>input {
 			width: 100%;
-			margin-bottom: 1em;
 			padding: 1em;
+			font-size: 12px;
 			box-sizing: border-box;
-			color: var.$darkColor;
+			text-align: center;
+			text-transform: uppercase;
+			color: #fff;
 			outline: none;
-			border-radius: 8px;
-			border: none;
-			background: var.$lightColor;
+			border-radius: 5px;
+			border: 1px solid #383838;
+			background: transparent;
 			transition: box-shadow .3s ease;
 
 			&:-webkit-autofill,
 			&:-webkit-autofill:hover,
 			&:-webkit-autofill:focus,
 			&:-webkit-autofill:active {
-				-webkit-box-shadow: 0 0 0 30px var.$darkColor inset !important;
-				-webkit-text-fill-color: var.$darkColor !important;
+				-webkit-border-color: #383838;
+				-webkit-box-shadow: 0 0 0 30px #202020 inset !important;
+				-webkit-text-fill-color: #fff !important;
 				-webkit-backdrop-filter: unset;
 			}
 
 			&:focus {
-				box-shadow: 0 10px 8px -4px rgba(154, 154, 154, .3);
+				border-color: var.$accentColor;
 			}
-		}
-
-		&>textarea {
-			resize: none;
 		}
 	}
 
-	&__check {
-		margin-top: 1em;
-		@include mix.adaptivFont(12, 8);
-		line-height: 1.2em;
-		text-align: center;
+	&__all-price {
+		@include mix.displayFlex(flex, space-between, center);
+		margin-bottom: 30px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 1.3em;
+		color: #fff;
+		border-bottom: 1px solid var.$accentColor;
+	}
 
-		&>p>a {
-			font-size: 12px;
-			text-decoration: underline;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
+	&__price {
+		color: var.$accentColor;
 	}
 }

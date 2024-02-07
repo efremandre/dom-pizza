@@ -4,4 +4,9 @@
 
 .logo {
 	@include mix.displayFlex(flex, center, center);
+	max-width: 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

@@ -37,9 +37,12 @@
 	<link rel="apple-touch-icon" sizes="167x167" href="assets/images/favicons/apple-touch-icon-167x167.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon-180x180.png">
 	<link rel="apple-touch-icon" sizes="1024x1024" href="assets/images/favicons/apple-touch-icon-1024x1024.png"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
     <script defer src="js/index.min.js"></script>
-    <title>Главная страница</title>
+    <title>DOM & Артем Волчек | Доставка еды</title>
 </head>
 
 <body>
@@ -52,7 +55,7 @@
                             <ul class="social__list">
                                 <li>
                                     <a href="#" target="_blank" title="Telegram" class="social__link">
-                                        <img src="./assets/images/icon/tg.svg" alt="Telegram">
+                                        <img src="./assets/images/icon/tg.svg" alt="Telegram" width="38">
                                     </a>
                                 </li>
                                 <li>
@@ -81,35 +84,194 @@
         <main class="main">
             <section class="main__hero hero">
                 <div class="container">
-
+                    <div class="hero__wrapper">
+                        <h1 class="hero__title main-title">
+                            Русская кухня<br>
+                            <span class="hero__solid"></span>
+                            Особняк DOM <span class="accent">&</span> Артем Волчек
+                        </h1>
+                        <p class="hero__description"><span class="accent">Понятные</span> и <span class="accent">вкусные</span> блюда из
+                            <span class="accent">премиальных</span> продуктов
+                        </p>
+                        <div class="hero__buttons">
+                            <a href="#" target="_blank" class="hero__btn-link button">
+                                <span>Скачать меню</span>
+                            </a>
+                            <a href="#" target="_blank" class="hero__btn-link button">
+                                <span>Быстрый заказ</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="button-dawn">
                     <button class="button-dawn__btn" tabindex="-1"></button>
                 </div>
             </section>
-            <section id="contact" class="main__contact contact">
+            <section class="main__slider slider">
                 <div class="container">
-                    <h2 class="contact__title subtitle animation">Связаться с нами</h2>
-                    <div class="contact__form-container form-container animation">
-                        <div class="form-preloader"></div>
-                        <form class="ajax contact__form form" action="#">
-                            <div class="form__input">
-                                <input type="text" name="name" placeholder="Ваше имя" data-input-req>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./assets/images/slider/slide-image.jpg" alt="В любую точку" loading="lazy">
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                             </div>
-                            <div class="form__input">
-                                <input type="tel" name="tel" placeholder="Ваш телефон" required data-phone-pattern data-input-req>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/images/slider/slide-image.jpg" alt="В любую точку" loading="lazy">
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                             </div>
-                            <div class="form__input">
-                                <textarea name="message" cols="40" rows="3" class="message" placeholder="Сообщение..."></textarea>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/images/slider/slide-image.jpg" alt="В любую точку" loading="lazy">
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                             </div>
-                            <button class="contact__button button button_accent" disabled data-button-send>Заказать звонок</button>
-                            <div class="form__check">
-                                <p>Нажимая кнопку вы подтверждаете что ознакомились с<br><a title="Политика конфиденциальности" target="_blank" href="/privacy.html">политикой конфиденциальности</a></p>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <div class="form-callback"></div>
+            </section>
+            <section class="main__delivery delivery">
+                <div class="container">
+                    <p class="delivery__description">Доставка в фотографиях наших клиентов</p>
+                    <h2 class="delivery__title subtitle"><span class="accent">#</span>DOM<span class="accent">&</span>Volchek<span class="accent">4</span>You</h2>
+                    <div class="delivery__button-wrapper"><a href="#" target="_blank" class="delivery__link button">Посмотреть</a></div>
+                </div>
+            </section>
+            <section class="main__menu menu">
+                <div class="container">
+                    <div class="menu__category category">
+                        <h3 class="category__title">Закуски</h3>
+                        <div class="category__cards">
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Мясные деликатесы по старинным рецептам.jpg" alt="Мясные деликатесы по старинным рецептам" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Нарезка ростбифа.jpg" alt="Нарезка ростбифа" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Паштет из куриной печени с луковым мармеладом и хрустящей чиабатой.jpg" alt="аштет из куриной печени с луковым мармеладом и хрустящей чиабатой" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Сало с Бородинским хлебом горчицей и чесноком.jpg" alt="Сало с Бородинским хлебом горчицей и чесноком" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Свежие овощи со сметанным соусом.jpg" alt="Свежие овощи со сметанным соусом" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Соленья.jpg" alt="Соленья" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category__card card">
+                                <div class="card__image">
+                                    <img src="./assets/images/menu/snacks/Особняк DOM_Хлебная корзина с маслом.jpg" alt="Хлебная корзина с маслом" loading="lazy" width="385">
+                                </div>
+                                <button class="card__button-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+" width="42">
+                                </button>
+                                <div class="card__description">
+                                    <h4 class="card__name">Соус из тайского манго</h4>
+                                    <div class="card__characteristics">
+                                        <span class="card__weight">40г</span>
+                                        <span class="card__solid"></span>
+                                        <span class="card__price">100р</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <div class="button-up _hidden-button">
                 <button class="button-up__btn"></button>
@@ -117,12 +279,229 @@
         </main>
         <footer class="footer">
             <div class="container">
+                <div class="footer__social social">
+                    <ul class="social__list">
+                        <li>
+                            <a href="#" target="_blank" title="Telegram" class="social__link">
+                                <img src="./assets/images/icon/tg.svg" alt="Telegram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" title="WhatsApp" class="social__link">
+                                <img src="./assets/images/icon/wa.svg" alt="WhatsApp">
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" #" target="_blank" title="Instagram" class="social__link">
+                                <img src="./assets/images/icon/inst.svg" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__phone">
+                    <a href="tel:+79112600880">+7 (911) 260 - 08 - 80</a>
+                </div>
+                <div class="footer__description">
+                    <p>Если вы не попадаете в зону доставки Яндекса или Delivery, то воспользуйтесь службой доставки DOM, заказав по
+                        телефону или с помощью мессенджеров</p>
+                </div>
+                <h2 class="footer__title subtitle"><span class="accent">#</span>DOM<span class="accent">&</span>Volchek<span class="accent">4</span>You</h2>
+                <a href="./privacy.html" target="_blank">политика конфиденциальности</a>
                 <div class="footer__autor">
-                    <span>powered by</span>
-                    <a href="#">delaemkrasivo.com</a>
+                    <div class="delaemkrasivo">
+                        <div class="powered">
+                            <p>powered by</p>
+                        </div>
+                        <a href="https://delaemkrasivo.com/" target="_blank">delaemkrasivo<span>.</span>com</a>
+                    </div>
                 </div>
             </div>
         </footer>
+        <div class="main__modal-order modal-order _hidden">
+            <div class="modal-order__wrapper">
+                <button class="modal-order__close">
+                    <img src="./assets/images/icon/close.svg" alt="Х">
+                </button>
+                <h2 class="modal-order__title">Оформление заказа</h2>
+                <div class="modal-order__item-wrapper">
+                    <div class="modal-order__item">
+                        <div class="modal-order__order-items">
+                            <div class="modal-order__order-item order-item">
+                                <div class="order-item__image-wrapper">
+                                    <div class="order-item__image">
+                                        <img src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="200">
+                                    </div>
+                                    <button class="order-item__close order-item__close_mobile">
+                                        <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                    </button>
+                                </div>
+                                <button class="order-item__close order-item__close_mobile">
+                                    <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                </button>
+                                <div class="order-item__description">
+                                    <div class="order-item__name">Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком
+                                    </div>
+                                    <div class="order-item__weight">610г</div>
+                                </div>
+                                <div class="order-item__current">
+                                    <div class="order-item__current-wrapper">
+                                        <div class="order-item__price">1200р</div>
+                                        <button class="order-item__close">
+                                            <img src="./assets/images/icon/close.svg" alt="Х">
+                                        </button>
+                                    </div>
+                                    <div class="order-item__quantity quantity">
+                                        <button class="quantity__minus">-</button>
+                                        <span class="quantity__current">1</span>
+                                        <button class="quantity__plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-order__order-item order-item">
+                                <div class="order-item__image-wrapper">
+                                    <div class="order-item__image">
+                                        <img src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="200">
+                                    </div>
+                                    <button class="order-item__close order-item__close_mobile">
+                                        <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                    </button>
+                                </div>
+                                <button class="order-item__close order-item__close_mobile">
+                                    <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                </button>
+                                <div class="order-item__description">
+                                    <div class="order-item__name">Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком
+                                    </div>
+                                    <div class="order-item__weight">610г</div>
+                                </div>
+                                <div class="order-item__current">
+                                    <div class="order-item__current-wrapper">
+                                        <div class="order-item__price">1200р</div>
+                                        <button class="order-item__close">
+                                            <img src="./assets/images/icon/close.svg" alt="Х">
+                                        </button>
+                                    </div>
+                                    <div class="order-item__quantity quantity">
+                                        <button class="quantity__minus">-</button>
+                                        <span class="quantity__current">1</span>
+                                        <button class="quantity__plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-order__order-item order-item">
+                                <div class="order-item__image-wrapper">
+                                    <div class="order-item__image">
+                                        <img src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="200">
+                                    </div>
+                                    <button class="order-item__close order-item__close_mobile">
+                                        <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                    </button>
+                                </div>
+                                <button class="order-item__close order-item__close_mobile">
+                                    <img src="./assets/images/icon/close-mobile.svg" alt="Х">
+                                </button>
+                                <div class="order-item__description">
+                                    <div class="order-item__name">Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком
+                                    </div>
+                                    <div class="order-item__weight">610г</div>
+                                </div>
+                                <div class="order-item__current">
+                                    <div class="order-item__current-wrapper">
+                                        <div class="order-item__price">1200р</div>
+                                        <button class="order-item__close">
+                                            <img src="./assets/images/icon/close.svg" alt="Х">
+                                        </button>
+                                    </div>
+                                    <div class="order-item__quantity quantity">
+                                        <button class="quantity__minus">-</button>
+                                        <span class="quantity__current">1</span>
+                                        <button class="quantity__plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-order__form">
+                            <p class="modal-order__form-title">Заполните поля</p>
+                            <div class="modal-order__form-container form-container">
+                                <div class="form-preloader"></div>
+                                <form class="ajax contact__form form" action="#">
+                                    <div class="form__inputs">
+                                        <div class="form__input">
+                                            <input type="text" name="name" placeholder="Имя" data-input-req>
+                                        </div>
+                                        <div class="form__input">
+                                            <input type="tel" name="tel" placeholder="Телефон" required data-phone-pattern data-input-req>
+                                        </div>
+                                    </div>
+                                    <div class="form__all-price">
+                                        <span>К оплате:</span>
+                                        <span class="form__price">3600р</span>
+                                    </div>
+                                    <button class="contact__button button" disabled data-button-send>Оформить заказ</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-order__add-to-order add-to-order">
+                        <h4 class="add-to-order__title"><span>Добавить к заказу?</span><span class="add-to-order__title-solid"></span>
+                        </h4>
+                        <div class="add-to-order__cards">
+                            <div class="add-to-order__card">
+                                <p class="add-to-order__card-name">Русская душа</p>
+                                <div class="add-to-order__image">
+                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                </div>
+                                <div class="add-to-order__card-price">1200p</div>
+                                <button class="add-to-order__card-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+">
+                                </button>
+                            </div>
+                            <div class="add-to-order__card">
+                                <p class="add-to-order__card-name">Русская душа</p>
+                                <div class="add-to-order__image">
+                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                </div>
+                                <div class="add-to-order__card-price">1200p</div>
+                                <button class="add-to-order__card-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+">
+                                </button>
+                            </div>
+                            <div class="add-to-order__card">
+                                <p class="add-to-order__card-name">Русская душа</p>
+                                <div class="add-to-order__image">
+                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                </div>
+                                <div class="add-to-order__card-price">1200p</div>
+                                <button class="add-to-order__card-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+">
+                                </button>
+                            </div>
+                            <div class="add-to-order__card">
+                                <p class="add-to-order__card-name">Русская душа</p>
+                                <div class="add-to-order__image">
+                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                </div>
+                                <div class="add-to-order__card-price">1200p</div>
+                                <button class="add-to-order__card-add">
+                                    <img src="./assets/images/icon/add.svg" alt="+">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-order__messages-done messages-done _hidden">
+                    <p class="messages-done__order">Заказ <span class="messages-done__order-number">№32133</span></p>
+                    <p class="messages-done__date">Оформлен в <span class="messages-done__date-item">17.45 21.08.2024</span></p>
+                    <p class="messages-done__messages">Ожидайте звонка менеджера</p>
+                </div>
+
+                <div class="modal-order__messages-error messages-error _hidden">
+                    <p class="messages-error__messages">Что-то пошло не так <br> и ничего не отправилось :(</p>
+                    <a href="#" target="_blank" class="messages-error__btn-link button">Написать менеджеру</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
