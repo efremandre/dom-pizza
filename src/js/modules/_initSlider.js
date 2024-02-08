@@ -1,5 +1,6 @@
 'use strict'
 import Swiper, { Autoplay, Lazy } from 'swiper'
+
 export function initSlider() {
 	const sliderSection = document.querySelector('.slider')
 	if (sliderSection) {

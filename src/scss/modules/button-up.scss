@@ -1,8 +1,12 @@
 @use '../base/variable' as var;
 
 .button-up {
+	@media screen and (max-width:639px) {
+		display: none;
+	}
+
 	position: fixed;
-	z-index: 90000;
+	z-index: 4;
 	bottom: 100px;
 	right: 20px;
 	visibility: hidden;

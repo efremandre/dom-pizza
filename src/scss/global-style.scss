@@ -9,7 +9,7 @@
 html,
 body {
 	height: 100%;
-	scrollbar-color: var.$accentColorTwo var.$lightColor;
+	scrollbar-color: var.$accentColor var.$mainBg;
 	scrollbar-width: thin;
 	font-family: var.$family;
 	font-weight: 400;
@@ -18,6 +18,10 @@ body {
 	color: var.$generalColorText;
 	scroll-behavior: smooth;
 	background: var.$mainBg;
+}
+
+::selection {
+	background: var.$accentColor;
 }
 
 * img {
@@ -94,12 +98,16 @@ a:focus {
 }
 
 .main-title {
-	@include mix.adaptivFont(var.$titleFontSize, var.$titleFontSizeMin);
+	font-size: var.$titleFont;
 	color: var.$titleColor;
 	font-weight: var.$titleWeight;
 	line-height: var.$titleHeight;
 	letter-spacing: var.$letterSpacing;
 	text-transform: var.$titleTransform;
+
+	&__subtitle {
+		font-size: clamp(1rem, -0.1667rem + 5.8333vw, 4.5rem);
+	}
 }
 
 .accent {

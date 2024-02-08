@@ -5,8 +5,7 @@
 export function modal() {
 
 	const body = document.querySelector('body')
-	const header = document.querySelector('.logo')
-	const navigation = document.querySelector('.navigation')
+	const navigation = document.querySelector('.header')
 	const paddingRightValue = `${window.innerWidth - document.documentElement.clientWidth}px`
 
 	const modal = {
@@ -19,7 +18,6 @@ export function modal() {
 		const getOpenModal = () => {
 			modal.modalOrder.classList.remove('_hidden')
 			body.style.paddingRight = paddingRightValue
-			header.style.paddingRight = paddingRightValue
 			navigation.style.paddingRight = paddingRightValue
 			body.classList.add('stop-scroll')
 		}
@@ -27,7 +25,6 @@ export function modal() {
 		const getCloseModal = () => {
 			modal.modalOrder.classList.add('_hidden')
 			body.style.paddingRight = '0'
-			header.style.paddingRight = '0'
 			navigation.style.paddingRight = '0'
 			body.classList.remove('stop-scroll')
 		}

@@ -2,16 +2,16 @@
 @use '../base/mixin' as mix;
 
 .delivery {
-	margin: 68px 0;
+	margin: clamp(3.125rem, 2.75rem + 1.875vw, 4.25rem) 0;
 	text-transform: uppercase;
 	text-align: center;
 
 	&__description {
-		margin-bottom: 20px;
+		margin-bottom: clamp(0.9375rem, 0.625rem + 1.5625vw, 1.875rem);
 	}
 
 	&__title {
-		margin-bottom: 30px;
+		margin-bottom: clamp(0.9375rem, 0.625rem + 1.5625vw, 1.875rem);
 	}
 
 	&__button-wrapper {

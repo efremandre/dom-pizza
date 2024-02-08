@@ -2,7 +2,12 @@
 
 .button-dawn {
 	position: absolute;
-	z-index: 6;
+
+	@media screen and (max-width:639px) {
+		display: none;
+	}
+
+	z-index: 4;
 	left: calc(50% - 22.5px);
 	bottom: 30px;
 

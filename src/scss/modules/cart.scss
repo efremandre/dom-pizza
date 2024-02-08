@@ -4,10 +4,10 @@
 
 .cart {
 	height: 100%;
-	padding: 13px 0;
+	padding: clamp(0.3125rem, 0.2125rem + 0.5vw, 0.8125rem) 0;
 	font-weight: 500;
 	text-transform: uppercase;
-	font-size: 36px;
+	font-size: clamp(1rem, 0.75rem + 1.25vw, 2.25rem);
 	color: var.$generalColorText;
 	background: var.$accentColor;
 	transition: background .5s;
@@ -20,12 +20,12 @@
 	}
 
 	&__current {
-		padding: 0 34px 0 35px;
+		padding: 0 clamp(0.625rem, 0.3125rem + 1.5625vw, 2.1875rem);
 		border-right: solid 2px #fff;
 	}
 
 	&__btn {
-		padding: 0 35px 0 34px;
+		padding: 0 clamp(0.625rem, 0.3125rem + 1.5625vw, 2.1875rem);
 		font-weight: 500;
 		text-transform: uppercase;
 		color: var.$generalColorText;

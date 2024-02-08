@@ -4,19 +4,31 @@
 
 $sizeAfterEl: 1.1em;
 
-.navigation {
-	position: absolute;
-	top: 0;
+.header {
+	position: fixed;
+
+	@media screen and (min-width:639px) {
+		top: 0;
+	}
+
+	@media screen and (max-width:639px) {
+		bottom: 0;
+	}
+
 	left: 0;
 	width: 100%;
-	z-index: 3;
+	z-index: 5;
 	width: 100%;
+}
+
+.navigation {
 	box-sizing: border-box;
-	padding: .5em 0;
+	padding: 18px 0 .5em 0;
 	color: var.$lightColor;
 	background: var.$mainBg;
 
 	&__wrapper {
+		position: relative;
 		@include mix.displayFlex(flex, space-between, center);
 	}
 }

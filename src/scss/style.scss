@@ -1,7 +1,7 @@
 @use './base/variable' as var;
 @use '../../node_modules/normalize.css/normalize.css';
 @use '../../node_modules/swiper/swiper-bundle.min.css';
-@use '../../node_modules/aos/dist/aos.css';
+@use '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
 @use './fonts.scss';
 @use 'global-style';
 @use 'privacy/privacy';

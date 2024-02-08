@@ -3,7 +3,7 @@
 
 .subtitle {
 	margin: 0;
-	@include mix.adaptivFont(var.$subTitleFontSize, var.$subTitleFontSizeMin);
+	font-size: var.$titleFont;
 	text-transform: uppercase;
 	font-family: var.$subFamily;
 	font-weight: var.$subTitleWeight;

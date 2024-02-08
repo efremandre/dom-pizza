@@ -42,7 +42,7 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
-		"aos": "^2.3.4",
+		"@fancyapps/ui": "^5.0.33",
 		"gulp-html-beautify": "^1.0.1",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-zip": "^5.1.0",

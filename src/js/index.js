@@ -1,5 +1,5 @@
-import { aos } from './modules/_aos.js'
 import { disabledBtnForm } from './modules/_disabledBtnForm.js'
+import { fancyapps } from './modules/_fancyapps.js'
 import { sendForm } from './modules/_form.js'
 import { hello } from './modules/_hello.js'
 import { initSlider } from './modules/_initSlider.js'
@@ -10,7 +10,7 @@ import { pressUp } from './modules/_pressUp.js'
 hello()
 modal()
 initSlider()
-aos()
+fancyapps()
 pressDawn()
 pressUp()
 disabledBtnForm()

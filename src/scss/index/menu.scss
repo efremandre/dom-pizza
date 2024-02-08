@@ -5,7 +5,6 @@
 	padding-bottom: 50px;
 
 	& .container {
-		width: 100%;
 		padding: 0;
 		width: clamp(25.5rem, 10.6rem + 74.5vw, 100rem);
 	}
@@ -23,7 +22,7 @@
 	&__cards {
 		display: grid;
 		justify-content: center;
-		align-items: center;
+		align-items: start;
 		grid-template-columns: repeat(4, clamp(5.4rem, 1.6800rem + 18.6000vw, 24rem));
 		grid-column-gap: 20px;
 		grid-row-gap: 25px;
@@ -31,13 +30,21 @@
 }
 
 .card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
 	&__image {
 		overflow: hidden;
 		width: clamp(5.4rem, 1.6800rem + 18.6000vw, 24rem);
 		height: clamp(5.4rem, 1.6800rem + 18.6000vw, 24rem);
 		border-radius: 10px;
 
-		&>img {
+		&>a {
+			position: relative;
+		}
+
+		&>a>img {
 			transition: transform .5s;
 		}
 
@@ -45,7 +52,7 @@
 			&:hover {
 				cursor: pointer;
 
-				&>img {
+				&>a>img {
 					transform: scale(1.1);
 				}
 			}
@@ -71,6 +78,13 @@
 		}
 	}
 
+	&__description {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 	&__name {
 		margin: 0 0 20px 0;
 		text-align: center;
@@ -90,7 +104,7 @@
 
 	&__solid {
 		display: block;
-		height: 40px;
+		height: clamp(1.125rem, 0.4583rem + 3.3333vw, 3.125rem);
 		width: 1px;
 		background: var.$accentColorTwo;
 	}

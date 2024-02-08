@@ -3,10 +3,18 @@
 @use '../base/extentsions';
 
 .logo {
-	@include mix.displayFlex(flex, center, center);
-	max-width: 150px;
-	position: absolute;
-	top: 50%;
+	@media screen and (min-width:639px) {
+		position: fixed;
+	}
+
+	@media screen and (max-width:639px) {
+		position: absolute;
+	}
+
+	z-index: 5;
+	top: clamp(1.25rem, 1.0833rem + 0.8333vw, 1.75rem);
 	left: 50%;
-	transform: translate(-50%, -50%);
+	@include mix.displayFlex(flex, center, center);
+	width: clamp(5.5rem, 4.2083rem + 6.4583vw, 9.375rem);
+	transform: translate(-50%, 0);
 }

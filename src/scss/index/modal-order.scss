@@ -5,9 +5,9 @@
 .modal-order {
 	position: fixed;
 	overflow-y: auto;
-	scrollbar-color: var.$accentColorTwo var.$lightColor;
+	scrollbar-color: var.$accentColor var.$mainBg;
 	scrollbar-width: thin;
-	z-index: 5;
+	z-index: 6;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -15,20 +15,21 @@
 	padding: 0 10px;
 	background: rgba(0, 0, 0, .6);
 	visibility: visible;
-	transition: background .5s;
+	transition: all .6s;
+
 
 	&__wrapper {
 		position: relative;
 		box-sizing: border-box;
 		margin: 50px auto;
-		padding: 30px;
+		padding: clamp(0.625rem, 0.2083rem + 2.0833vw, 1.875rem);
 		width: 100%;
 		max-width: 1320px;
 		border-radius: 20px;
-		background: #1a1a1a;
 		transform: translateY(0);
 		opacity: 1;
-		transition: transform .5s, opacity .5s;
+		background: #1a1a1a;
+		transition: transform .6s, opacity .6s;
 	}
 
 	&._hidden {
@@ -37,8 +38,9 @@
 			opacity: 0;
 		}
 
-		visibility: hidden;
+		overflow-y: hidden;
 		background: none;
+		visibility: hidden;
 	}
 
 	&__close {
@@ -46,6 +48,9 @@
 		z-index: 6;
 		top: 30px;
 		right: 30px;
+		width: clamp(1.875rem, 1.7rem + 0.875vw, 2.75rem);
+		height: clamp(1.875rem, 1.7rem + 0.875vw, 2.75rem);
+		padding: 0;
 		transition: transform .5s;
 
 		@media (any-hover: hover) {
@@ -86,6 +91,10 @@
 		padding: 35px;
 		border-radius: 20px;
 		background: #202020;
+
+		&_mobile {
+			display: none;
+		}
 	}
 
 	&__form-title {
@@ -99,7 +108,7 @@
 
 .order-item {
 	display: grid;
-	grid-template-columns: 150px repeat(2, 1fr);
+	grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) repeat(2, auto);
 	grid-template-rows: 1fr;
 	grid-gap: 0;
 
@@ -109,8 +118,8 @@
 
 	&__image {
 		overflow: hidden;
-		width: 150px;
-		height: 150px;
+		width: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem);
+		height: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem);
 		border-radius: 10px;
 	}
 
@@ -143,17 +152,21 @@
 
 	&__price {
 		font-size: clamp(0.875rem, 0.6rem + 1.375vw, 2.25rem);
+
+		&_mobile {
+			display: none;
+		}
 	}
 
 	&__close {
 		padding: 0;
-		width: 35px;
-		height: 35px;
+		width: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
+		height: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
 
 		&_mobile {
 			display: none;
 			position: absolute;
-			bottom: 5px;
+			top: clamp(2.34375rem, 0.2434rem + 10.5016vw, 4.4375rem);
 			left: calc(50% - 12.5px);
 			width: 25px;
 			height: 25px;
@@ -181,15 +194,15 @@
 }
 
 .quantity {
-	@include mix.displayFlex(flex, flex-start, center);
-	gap: 15px;
+	@include mix.displayFlex(flex, flex-end, center);
+	gap: clamp(0.3125rem, 0.1875rem + 0.625vw, 0.9375rem);
 
 	&>span,
 	&>button {
 		@include mix.displayFlex(flex, center, center);
 		flex-direction: column;
-		width: 50px;
-		height: 50px;
+		width: clamp(1.5625rem, 1.25rem + 1.5625vw, 3.125rem);
+		height: clamp(1.5625rem, 1.25rem + 1.5625vw, 3.125rem);
 		color: #fff;
 		background: #202020;
 	}
@@ -233,29 +246,33 @@
 
 	&__cards {
 		display: flex;
-		justify-content: space-between;
-		gap: 10px;
+		justify-content: center;
+		gap: clamp(0.625rem, 0.125rem + 2.5vw, 3.125rem);
 	}
 
 	&__card {
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 15px;
-		padding: 20px;
+		width: 100%;
+		max-width: 240px;
+		padding: 20px 10px;
 		text-align: center;
 		border-radius: 20px;
 		background: #202020;
 	}
 
 	&__card-name {
+		flex: 1 0 auto;
 		font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
 	}
 
 	&__image {
 		overflow: hidden;
-		width: 200px;
-		height: 200px;
+		width: clamp(6.25rem, 3.1323rem + 7.8064vw, 12.5rem);
+		height: clamp(6.25rem, 3.1323rem + 7.8064vw, 12.5rem);
 		border-radius: 10px;
 	}
 
@@ -308,15 +325,9 @@
 		margin: 30px auto 0 auto;
 	}
 
-	&__order {}
-
-	&__order-number {}
-
 	&__date {
 		font-size: clamp(0.875rem, 0.6rem + 1.375vw, 2.25rem);
 	}
-
-	&__date-item {}
 
 	&__messages {
 		font-size: clamp(0.875rem, 0.6rem + 1.375vw, 2.25rem);

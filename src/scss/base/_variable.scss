@@ -23,8 +23,7 @@ $subColorText: #9e9b98; // color дополнительного текста
 /// заголовок главный
 $titleColor: #fff; // color
 $titleWeight: 700; // font-weight
-$titleFontSize: 72; // font-size
-$titleFontSizeMin: 24; // font-size
+$titleFont: clamp(1.5rem, 0.5rem + 5vw, 4.5rem); // font-size
 $titleHeight: 1.3em; // line-height
 $titleTransform: uppercase; // text-transform
 
