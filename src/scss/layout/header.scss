@@ -6,6 +6,11 @@ $sizeAfterEl: 1.1em;
 
 .header {
 	position: fixed;
+	transition: transform .8s ease;
+
+	&._hidden {
+		transform: translateY(-98%);
+	}
 
 	@media screen and (min-width:639px) {
 		top: 0;
@@ -23,7 +28,7 @@ $sizeAfterEl: 1.1em;
 
 .navigation {
 	box-sizing: border-box;
-	padding: 18px 0 .5em 0;
+	padding: 10px 0;
 	color: var.$lightColor;
 	background: var.$mainBg;
 

@@ -2715,13 +2715,14 @@ a:focus {
 
 .logo {
   z-index: 5;
-  top: clamp(1.25rem, 1.0833rem + 0.8333vw, 1.75rem);
+  top: 15px;
   left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: clamp(5.5rem, 4.2083rem + 6.4583vw, 9.375rem);
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -6%);
+  transition: transform 0.8s ease;
 }
 @media screen and (min-width: 639px) {
   .logo {
@@ -2733,13 +2734,20 @@ a:focus {
     position: absolute;
   }
 }
+.logo._hidden {
+  transform: translate(-50%, -160%);
+}
 
 .header {
   position: fixed;
+  transition: transform 0.8s ease;
   left: 0;
   width: 100%;
   z-index: 5;
   width: 100%;
+}
+.header._hidden {
+  transform: translateY(-98%);
 }
 @media screen and (min-width: 639px) {
   .header {
@@ -2754,7 +2762,7 @@ a:focus {
 
 .navigation {
   box-sizing: border-box;
-  padding: 18px 0 0.5em 0;
+  padding: 10px 0;
   color: #FBFBFB;
   background: #202020;
 }
@@ -2975,6 +2983,9 @@ a:focus {
   background: #bc120f;
   transition: background 0.5s;
 }
+.card__button-add._active {
+  background: green;
+}
 @media (any-hover: hover) {
   .card__button-add:hover {
     background: green;
@@ -3077,6 +3088,7 @@ a:focus {
 .modal-order__item {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 .modal-order__order-items {
@@ -3108,6 +3120,7 @@ a:focus {
   grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) repeat(2, auto);
   grid-template-rows: 1fr;
   grid-gap: 0;
+  flex: 0 1 auto;
 }
 .order-item__image-wrapper {
   position: relative;

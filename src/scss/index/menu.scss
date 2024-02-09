@@ -71,6 +71,10 @@
 		background: var.$accentColor;
 		transition: background .5s;
 
+		&._active {
+			background: green;
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				background: green;

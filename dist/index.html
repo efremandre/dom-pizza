@@ -41,14 +41,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
-    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
     <script defer src="js/index.min.js"></script>
     <title>DOM & Артем Волчек | Доставка еды</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" data-header>
             <div data-header class="header__navigation navigation">
                 <div class="container">
                     <div class="navigation__wrapper">
@@ -80,7 +80,7 @@
             </div>
         </header>
         <main class="main">
-            <div class="navigation__logo logo">
+            <div class="navigation__logo logo" data-logo>
                 <img src="./assets/images/logo.svg" alt="DOM">
             </div>
             <section class="main__hero hero">
@@ -148,15 +148,15 @@
                                         <img class="img" src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="385" height="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="01" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -166,15 +166,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Мясные деликатесы по старинным рецептам.jpg" alt="Мясные деликатесы по старинным рецептам" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="02" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Мясные деликатесы по старинным рецептам</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -184,15 +184,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Нарезка ростбифа.jpg" alt="Нарезка ростбифа" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="03" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Соус из тайского манго</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -202,15 +202,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Паштет из куриной печени с луковым мармеладом и хрустящей чиабатой.jpg" alt="Паштет из куриной печени с луковым мармеладом и хрустящей чиабатой" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="04" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Паштет из куриной печени с луковым мармеладом и хрустящей чиабато</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -220,15 +220,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Сало с Бородинским хлебом горчицей и чесноком.jpg" alt="Сало с Бородинским хлебом горчицей и чесноком" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="05" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Сало с Бородинским хлебом горчицей и чесноком</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -238,15 +238,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Свежие овощи со сметанным соусом.jpg" alt="Свежие овощи со сметанным соусом" loading="lazy" decoding="async" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="06" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Свежие овощи со сметанным соусом</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -256,15 +256,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Соленья.jpg" alt="Соленья" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="07" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Соленья</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -274,15 +274,15 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Хлебная корзина с маслом.jpg" alt="Хлебная корзина с маслом" loading="lazy" width="385" height="385">
                                     </a>
                                 </div>
-                                <button class="card__button-add">
+                                <button data-product-id="08" class="card__button-add">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
                                     <h4 class="card__name">Хлебная корзина с маслом</h4>
                                     <div class="card__characteristics">
-                                        <span class="card__weight">40г</span>
+                                        <span class="card__weight"><span>40</span>г</span>
                                         <span class="card__solid"></span>
-                                        <span class="card__price">100р</span>
+                                        <span class="card__price"><span>100</span>р</span>
                                     </div>
                                 </div>
                             </div>
@@ -343,37 +343,7 @@
                 <div class="modal-order__item-wrapper">
                     <div class="modal-order__item">
                         <div class="modal-order__order-items">
-                            <div class="modal-order__order-item order-item">
-                                <div class="order-item__image-wrapper">
-                                    <div class="order-item__image">
-                                        <img src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="200">
-                                    </div>
-                                    <button class="order-item__close order-item__close_mobile">
-                                        <img src="./assets/images/icon/close.svg" alt="Х">
-                                    </button>
-                                </div>
-                                <div class="order-item__description">
-                                    <div class="order-item__name">Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком
-                                    </div>
-                                    <div class="order-item__description-wrapper">
-                                        <div class="order-item__weight">610г</div>
-                                        <div class="order-item__price order-item__price_mobile">1200р</div>
-                                    </div>
-                                </div>
-                                <div class="order-item__current">
-                                    <div class="order-item__current-wrapper">
-                                        <div class="order-item__price">1200р</div>
-                                        <button class="order-item__close">
-                                            <img src="./assets/images/icon/close.svg" alt="Х">
-                                        </button>
-                                    </div>
-                                    <div class="order-item__quantity quantity">
-                                        <button class="quantity__minus">-</button>
-                                        <span class="quantity__current">1</span>
-                                        <button class="quantity__plus">+</button>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="modal-order__form">
                             <p class="modal-order__form-title">Заполните поля</p>
@@ -390,7 +360,7 @@
                                     </div>
                                     <div class="form__all-price">
                                         <span>К оплате:</span>
-                                        <span class="form__price">3600р</span>
+                                        <span class="form__price"><span>0</span>р</span>
                                     </div>
                                     <button class="contact__button button" disabled data-button-send>Оформить заказ</button>
                                 </form>

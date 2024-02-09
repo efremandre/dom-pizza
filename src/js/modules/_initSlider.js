@@ -1,11 +1,11 @@
 'use strict'
-import Swiper, { Autoplay, Lazy } from 'swiper'
+import Swiper, { Autoplay, Lazy, FreeMode } from 'swiper'
 
 export function initSlider() {
 	const sliderSection = document.querySelector('.slider')
 	if (sliderSection) {
 		const port = new Swiper('.mySwiper', {
-			modules: [Autoplay, Lazy],
+			modules: [Autoplay, Lazy, FreeMode],
 			lazy: true,
 			loop: true,
 			speed: 1000,
