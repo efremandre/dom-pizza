@@ -228,6 +228,10 @@
 	&__minus {
 		transition: background .6s;
 
+		&:active {
+			background: green;
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				background: var.$accentColor;
@@ -308,6 +312,9 @@
 
 	&__card-add {
 		position: absolute;
+		display: grid;
+		place-content: center;
+		align-items: center;
 		left: calc(50% - 22.5px);
 		bottom: -22.5px;
 		width: 45px;
@@ -319,6 +326,12 @@
 
 		&>img {
 			pointer-events: none;
+			width: 20px;
+			height: 20px;
+		}
+
+		&:active {
+			background: green;
 		}
 
 		@media (any-hover: hover) {

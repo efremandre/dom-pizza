@@ -1,4 +1,5 @@
 'use strict'
+import { setColorBtn } from './_setColorBtn.js'
 
 export function modal() {
 
@@ -9,13 +10,16 @@ export function modal() {
 	const showTotlalQuantity = document.querySelector('.cart__current')
 
 	const modal = {
+		formPopupBodyOrder: document.querySelector('.modal-order__item-wrapper'),
+		formPopupBodySuccess: document.querySelector('.messages-done'),
+		formPopupBodyError: document.querySelector('.messages-error'),
 		modalOpenBtn: document.querySelector('.cart'),
 		modalCloseBtn: document.querySelector('.modal-order__close'),
 		modalRemoveBtn: document.querySelectorAll('.order-item__close'),
 		modalOrder: document.querySelector('.modal-order'),
 		modalAddToOrder: document.querySelector('.add-to-order'),
 		modalProductsWrapper: document.querySelector('.modal-order__order-items'),
-		modalTotalSumm: document.querySelector('.form__price span'),
+		modalTotalSumm: document.querySelectorAll('.form__price span'),
 		addBtnCard: document.querySelectorAll('.add-to-order__card-add.add-order'),
 	}
 
@@ -45,8 +49,10 @@ export function modal() {
 
 	/// показываем общую сумму в корзине
 	const showTotalSumm = () => {
-		const totalData = JSON.parse(localStorage.getItem('totalCurrentDataDOM'));
-		(totalData === null) ? modal.modalTotalSumm.innerText = 0 : modal.modalTotalSumm.innerText = totalData.totalSum
+		const totalData = JSON.parse(localStorage.getItem('totalCurrentDataDOM'))
+		modal.modalTotalSumm.forEach(el => {
+			(totalData === null) ? el.innerText = 0 : el.innerText = totalData.totalSum
+		})
 	}
 
 	/// сохраняем изменения в локальное хранилище
@@ -113,12 +119,12 @@ export function modal() {
 
 			if (indexToRemove !== -1) {
 				productsList.splice(indexToRemove, 1)
-
 				setTotalData(productsList, totalCurrentData)
 				setLocalStorage(productsList, totalCurrentData)
 				getRenderProductItems()
 				showTotalSumm()
 				showTotalQuantityCartButton()
+				setColorBtn()
 			}
 
 			return
@@ -158,9 +164,15 @@ export function modal() {
 
 		const getCloseModal = () => {
 			modal.modalOrder.classList.add('_hidden')
+			modal.formPopupBodySuccess.classList.add('_hidden')
+			modal.formPopupBodyError.classList.add('_hidden')
+			modal.formPopupBodyOrder.classList.remove('_hidden')
+
 			body.style.paddingRight = '0'
 			navigation.style.paddingRight = '0'
 			body.classList.remove('stop-scroll')
+			setColorBtn()
+			showTotalSumm()
 		}
 
 		modal.modalOpenBtn.addEventListener('click', getOpenModal)
@@ -169,7 +181,6 @@ export function modal() {
 
 	modal.addBtnCard.forEach(btn => {
 		btn.addEventListener('click', () => {
-			console.log('test')
 			showTotalQuantityCartButton()
 			showTotalSumm()
 			getRenderProductItems()

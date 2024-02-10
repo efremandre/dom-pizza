@@ -2430,6 +2430,10 @@ a:focus {
   color: #bc120f;
 }
 
+.add-order._active {
+  background: green;
+}
+
 .privacy {
   padding: 20px;
 }
@@ -2709,7 +2713,7 @@ a:focus {
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
   font-weight: 700;
   line-height: 1.3em;
-  color: #9e9b98;
+  color: #fff;
   text-align: center;
 }
 
@@ -2934,7 +2938,7 @@ a:focus {
   margin: 30px 0 50px 0;
   line-height: 1.3em;
   text-transform: uppercase;
-  color: #9e9b98;
+  color: #fff;
   font-size: clamp(0.875rem, 0.45rem + 2.125vw, 3rem);
 }
 .category__cards {
@@ -2952,6 +2956,7 @@ a:focus {
   height: 100%;
 }
 .card__image {
+  position: relative;
   overflow: hidden;
   width: clamp(5.4rem, 1.68rem + 18.6vw, 24rem);
   height: clamp(5.4rem, 1.68rem + 18.6vw, 24rem);
@@ -2971,10 +2976,37 @@ a:focus {
     transform: scale(1.1);
   }
 }
+.card__nameplate {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  place-content: center;
+  grid-gap: clamp(0.1875rem, 0.1625rem + 0.125vw, 0.3125rem);
+  z-index: 3;
+  top: 10px;
+  right: 10px;
+  width: clamp(1.875rem, 1.5rem + 1.875vw, 3.75rem);
+  height: clamp(1.875rem, 1.5rem + 1.875vw, 3.75rem);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1em;
+  font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+  color: #fff;
+  background: #bc120f;
+}
+.card__nameplate-img {
+  display: grid;
+  align-items: center;
+  place-content: center;
+  width: 18px;
+  height: 18px;
+}
 .card__button-add {
   position: relative;
+  display: grid;
+  place-content: center;
+  align-items: center;
   top: -30px;
-  display: block;
   width: 60px;
   height: 60px;
   margin: 0 auto;
@@ -2983,7 +3015,12 @@ a:focus {
   background: #bc120f;
   transition: background 0.5s;
 }
-.card__button-add._active {
+.card__button-add > img {
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+}
+.card__button-add:active {
   background: green;
 }
 @media (any-hover: hover) {
@@ -3220,6 +3257,9 @@ a:focus {
 .quantity__plus, .quantity__minus {
   transition: background 0.6s;
 }
+.quantity__plus:active, .quantity__minus:active {
+  background: green;
+}
 @media (any-hover: hover) {
   .quantity__plus:hover, .quantity__minus:hover {
     background: #bc120f;
@@ -3288,6 +3328,9 @@ a:focus {
 }
 .add-to-order__card-add {
   position: absolute;
+  display: grid;
+  place-content: center;
+  align-items: center;
   left: calc(50% - 22.5px);
   bottom: -22.5px;
   width: 45px;
@@ -3299,6 +3342,11 @@ a:focus {
 }
 .add-to-order__card-add > img {
   pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
+.add-to-order__card-add:active {
+  background: green;
 }
 @media (any-hover: hover) {
   .add-to-order__card-add:hover {
@@ -3625,6 +3673,13 @@ a:focus {
     flex-direction: row;
     gap: 10px;
   }
+  .card__nameplate {
+    top: 5px;
+    right: 5px;
+  }
+  .card__nameplate-img {
+    display: none;
+  }
   .card__image {
     flex: 0 0 87px;
     height: 87px;
@@ -3647,5 +3702,10 @@ a:focus {
   }
   .card__solid {
     margin: 0 20px;
+  }
+}
+@media (any-hover: none) and (orientation: landscape) {
+  .add-to-order__title-solid {
+    display: none;
   }
 }

@@ -15,7 +15,7 @@
 		margin: 30px 0 50px 0;
 		line-height: 1.3em;
 		text-transform: uppercase;
-		color: var.$accentColorTwo;
+		color: #fff;
 		font-size: clamp(0.875rem, 0.45rem + 2.125vw, 3rem);
 	}
 
@@ -35,6 +35,7 @@
 	height: 100%;
 
 	&__image {
+		position: relative;
 		overflow: hidden;
 		width: clamp(5.4rem, 1.6800rem + 18.6000vw, 24rem);
 		height: clamp(5.4rem, 1.6800rem + 18.6000vw, 24rem);
@@ -59,10 +60,39 @@
 		}
 	}
 
+	&__nameplate {
+		position: absolute;
+		display: grid;
+		align-items: center;
+		place-content: center;
+		grid-gap: clamp(0.1875rem, 0.1625rem + 0.125vw, 0.3125rem);
+		z-index: 3;
+		top: 10px;
+		right: 10px;
+		width: clamp(1.875rem, 1.5rem + 1.875vw, 3.75rem);
+		height: clamp(1.875rem, 1.5rem + 1.875vw, 3.75rem);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 1em;
+		font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+		color: #fff;
+		background: var.$accentColor;
+	}
+
+	&__nameplate-img {
+		display: grid;
+		align-items: center;
+		place-content: center;
+		width: 18px;
+		height: 18px;
+	}
+
 	&__button-add {
 		position: relative;
+		display: grid;
+		place-content: center;
+		align-items: center;
 		top: -30px;
-		display: block;
 		width: 60px;
 		height: 60px;
 		margin: 0 auto;
@@ -71,7 +101,13 @@
 		background: var.$accentColor;
 		transition: background .5s;
 
-		&._active {
+		&>img {
+			pointer-events: none;
+			width: 30px;
+			height: 30px;
+		}
+
+		&:active {
 			background: green;
 		}
 

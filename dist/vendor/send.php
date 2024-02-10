@@ -1,21 +1,20 @@
 <?php
-
-
 $name = $_POST['name'];
 $name = str_replace(['(',')','{','}','[', ']', '+', '=', '$', '_', '<', '>', '/', '/\/'], '', $name );
 
 $phone = $_POST['tel'];
 $phone = str_replace(['(',')','-','+',' '], '', $phone );
 
+$totalData = $_POST['totalData'];
 $productList = $_POST['productList'];
+$totalData = json_decode($totalData, true);
 $productList = json_decode($productList, true);
 
-
-
+$totalCurrentString = $totalData['totalCurrent'];
+$totalSumString = $totalData['totalSum'];
 $productListString = '';
 
 foreach ($productList as $product) {
-    
     $productListString .= 
         "ID: " . $product['productId']. "%0A" .
         "Название: " . $product['productName'] . "%0A" .
@@ -26,7 +25,7 @@ foreach ($productList as $product) {
 }
 
 $rand = mt_rand();
-$today = date("Y.m.d h:i:s G");
+$today = date("Y.m.d h:i:s");
 
 $token = "5897585110:AAEF-Rxg4jyhUe8CbFJZk-9NI99YitZbO1c";
 $chat_id = "-1001833268569";
@@ -34,9 +33,11 @@ $chat_id = "-1001833268569";
 $arr = array(
 	'👀 ЗАЯВКА С ФОРМЫ № ' => $rand,
 	'от ' => $today . '%0A',
-	'📞 Имя: ' => $name,
-	'👽 Телефон: ' => $phone,
-	'%0A' . '🛒 Заказ '. '%0A' => $productListString,
+	'👽 Имя: ' => $name,
+	'📞 Телефон: ' => $phone,
+	'%0A' . '🛒 Содержимое корзины '. '%0A' . 'Общее кол-во: ' => $totalCurrentString,
+	'Общее сумма: ' => $totalSumString . "руб.",
+	'%0A' . 'Список блюд '. '%0A' => $productListString,
 );
 
 $txt = '';
@@ -48,9 +49,9 @@ foreach($arr as $key => $value) {
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
 if (!$sendToTelegram) {
-    $message = 'Что-то пошло не так и ничего не отправилось...';
+    $message = 'Что-то пошло не так <br> и ничего не отправилось :(';
 } else {
-    $message = $rand . $today;
+	$message = json_encode(['rand' => $rand, 'today' => $today]);
 }
 
 $response = ['message' => $message];

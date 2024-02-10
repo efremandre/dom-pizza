@@ -1,4 +1,5 @@
 'use strict'
+import { setColorBtn } from './_setColorBtn.js'
 
 export function addToCart() {
 
@@ -23,7 +24,7 @@ export function addToCart() {
 			const prevElement = targetBtn.previousElementSibling
 			const nextElement = targetBtn.nextElementSibling
 
-			const productImgSrc = targetBtn.parentNode.querySelector('img').src || prevElement.querySelector('img').src
+			const productImgSrc = targetBtn.parentNode.querySelector('a img').src || prevElement.querySelector('img').src
 			const productName = (targetBtn.parentNode.querySelector('.add-to-order__card-name') || {}).innerText || (nextElement.querySelector('.card__name') || {}).innerText
 			const productWeight = targetBtn.parentNode.querySelector('.card__weight span').innerText
 			const productPrice = targetBtn.parentNode.querySelector('.card__price span').innerText
@@ -67,6 +68,7 @@ export function addToCart() {
 			localStorage.setItem('addToCartProductsDOM', JSON.stringify(productsList))
 
 			showTotalQuantityCartButton()
+			setColorBtn()
 		})
 	})
 }

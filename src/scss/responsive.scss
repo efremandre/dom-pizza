@@ -265,6 +265,15 @@
 		flex-direction: row;
 		gap: 10px;
 
+		&__nameplate {
+			top: 5px;
+			right: 5px;
+		}
+
+		&__nameplate-img {
+			display: none;
+		}
+
 		&__image {
 			flex: 0 0 87px;
 			height: 87px;
@@ -295,4 +304,10 @@
 	}
 }
 
-@media (any-hover: none) and (orientation: landscape) {}
+@media (any-hover: none) and (orientation: landscape) {
+	.add-to-order {
+		&__title-solid {
+			display: none;
+		}
+	}
+}

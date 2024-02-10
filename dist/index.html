@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="js/index.min.js"></script>
     <title>DOM & Артем Волчек | Доставка еды</title>
 </head>
@@ -144,6 +144,12 @@
                         <div class="category__cards">
                             <div class="category__card card">
                                 <div class="card__image">
+                                    <div class="card__nameplate">
+                                        <span class="card__nameplate-img">
+                                            <img src="./assets/images/icon/hit.svg" alt="Хит">
+                                        </span>
+                                        <span>Хит</span>
+                                    </div>
                                     <a data-fancybox data-caption="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" data-src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg">
                                         <img class="img" src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="385" height="385">
                                     </a>
@@ -372,7 +378,9 @@
                             <div class="add-to-order__card">
                                 <p class="add-to-order__card-name">Под горчичным соусом с пельменями</p>
                                 <div class="add-to-order__image">
-                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    <a data-fancybox data-caption="Русская душа" data-src="./assets/images/add-to-order/russian-soul.jpg">
+                                        <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    </a>
                                 </div>
                                 <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
                                 <span class="add-to-order__weight card__weight"><span>40</span>г</span>
@@ -383,7 +391,9 @@
                             <div class="add-to-order__card">
                                 <p class="add-to-order__card-name">Русская душа</p>
                                 <div class="add-to-order__image">
-                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    <a data-fancybox data-caption="Русская душа" data-src="./assets/images/add-to-order/russian-soul.jpg">
+                                        <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    </a>
                                 </div>
                                 <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
                                 <span class="add-to-order__weight card__weight"><span>40</span>г</span>
@@ -394,7 +404,9 @@
                             <div class="add-to-order__card">
                                 <p class="add-to-order__card-name">Русская душа</p>
                                 <div class="add-to-order__image">
-                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    <a data-fancybox data-caption="Русская душа" data-src="./assets/images/add-to-order/russian-soul.jpg">
+                                        <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    </a>
                                 </div>
                                 <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
                                 <span class="add-to-order__weight card__weight"><span>40</span>г</span>
@@ -405,7 +417,9 @@
                             <div class="add-to-order__card">
                                 <p class="add-to-order__card-name">Русская душа</p>
                                 <div class="add-to-order__image">
-                                    <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    <a data-fancybox data-caption="Русская душа" data-src="./assets/images/add-to-order/russian-soul.jpg">
+                                        <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
+                                    </a>
                                 </div>
                                 <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
                                 <span class="add-to-order__weight card__weight"><span>40</span>г</span>
@@ -430,7 +444,7 @@
                                 </div>
                                 <div class="form__all-price">
                                     <span>К оплате:</span>
-                                    <span class="form__price">3600р</span>
+                                    <span class="form__price"><span>0</span>р</span>
                                 </div>
                                 <button class="contact__button button" disabled data-button-send>Оформить заказ</button>
                             </form>

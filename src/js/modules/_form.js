@@ -4,8 +4,15 @@ export function sendForm() {
 
 		const forms = document.querySelectorAll('.ajax')
 		const formPopupBodyOrder = document.querySelector('.modal-order__item-wrapper')
-		const formPopupBodysuccess = document.querySelector('.messages-done')
+		const formPopupBodySuccess = document.querySelector('.messages-done')
 		const formPopupBodyError = document.querySelector('.messages-error')
+		const showTotlalQuantity = document.querySelector('.cart__current')
+		const modalTotalSumm = document.querySelectorAll('.form__price span')
+
+		const bodySuccess = {
+			orderNumber: document.querySelector('.messages-done__order-number'),
+			orderDate: document.querySelector('.messages-done__date-item'),
+		}
 
 		forms.forEach(form => {
 			form.addEventListener('submit', async (e) => {
@@ -32,13 +39,23 @@ export function sendForm() {
 					}
 
 					const result = await response.json()
+					let messages = JSON.parse(result.message)
 
 					formPopupBodyOrder.classList.add('_hidden')
-					formPopupBodysuccess.classList.remove('_hidden')
+					formPopupBodySuccess.classList.remove('_hidden')
+
+					bodySuccess.orderNumber.innerText = `${messages.rand}`
+					bodySuccess.orderDate.innerText = `${messages.today}`
+
+					localStorage.removeItem('totalCurrentDataDOM')
+					localStorage.removeItem('addToCartProductsDOM')
+
+					showTotlalQuantity.innerText = '0'
+					modalTotalSumm.forEach(el => el.innerText = '0')
+					e.target.reset()
 
 				} catch (error) {
 					console.error('Error during form submission:', error)
-
 					formPopupBodyOrder.classList.add('_hidden')
 					formPopupBodyError.classList.remove('_hidden')
 				}
