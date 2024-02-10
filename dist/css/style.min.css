@@ -3040,6 +3040,12 @@ a:focus {
   visibility: visible;
   transition: all 0.6s;
 }
+.modal-order__cart-empty {
+  flex: 1 1 auto;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+  color: #9e9b98;
+}
 .modal-order__wrapper {
   position: relative;
   box-sizing: border-box;
@@ -3117,7 +3123,7 @@ a:focus {
 
 .order-item {
   display: grid;
-  grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) repeat(2, auto);
+  grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) 1fr auto;
   grid-template-rows: 1fr;
   grid-gap: 0;
   flex: 0 1 auto;
@@ -3166,6 +3172,9 @@ a:focus {
   width: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
   height: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
 }
+.order-item__close > img {
+  pointer-events: none;
+}
 .order-item__close_mobile {
   display: none;
   position: absolute;
@@ -3176,6 +3185,9 @@ a:focus {
   padding: 5px;
   border-radius: 5px;
   background: #202020;
+}
+.order-item__close_mobile > img {
+  pointer-events: none;
 }
 .order-item__close > img {
   transition: transform 0.5s;
@@ -3217,6 +3229,9 @@ a:focus {
 .add-to-order {
   max-width: 1110px;
   margin: 0 auto 22.5px auto;
+}
+.add-to-order._hidden {
+  display: none;
 }
 .add-to-order__title {
   display: flex;
@@ -3268,6 +3283,9 @@ a:focus {
   font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
   margin-bottom: 15px;
 }
+.add-to-order__weight {
+  display: none;
+}
 .add-to-order__card-add {
   position: absolute;
   left: calc(50% - 22.5px);
@@ -3278,6 +3296,9 @@ a:focus {
   border-radius: 10px;
   background: #bc120f;
   transition: background 0.6s;
+}
+.add-to-order__card-add > img {
+  pointer-events: none;
 }
 @media (any-hover: hover) {
   .add-to-order__card-add:hover {

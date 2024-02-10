@@ -2,53 +2,47 @@
 export function sendForm() {
 	document.addEventListener('DOMContentLoaded', () => {
 
-		const form = document.querySelectorAll('.ajax')
-		const formPreloaders = document.querySelectorAll('.form-preloader')
-		const note = document.querySelectorAll('.form-callback')
+		const forms = document.querySelectorAll('.ajax')
+		const formPopupBodyOrder = document.querySelector('.modal-order__item-wrapper')
+		const formPopupBodysuccess = document.querySelector('.messages-done')
+		const formPopupBodyError = document.querySelector('.messages-error')
 
-		const formArr = Array.from(form)
-		const formPreloader = Array.from(formPreloaders)
-		const noteArr = Array.from(note)
-
-		formArr.forEach((el) => {
-			el.addEventListener('submit', formSend)
-			async function formSend(e) {
+		forms.forEach(form => {
+			form.addEventListener('submit', async (e) => {
 				e.preventDefault()
 
-				const formData = new FormData(el)
+				const formData = new FormData(form)
+				const totalData = localStorage.getItem('totalCurrentDataDOM')
+				const productList = localStorage.getItem('addToCartProductsDOM')
 
-				const response = await fetch('../../vendor/send.php', {
-					method: 'POST',
-					body: formData,
+				formData.append('totalData', totalData)
+				formData.append('productList', productList)
+				formData.forEach((value, key) => {
+					console.log(key + ', ' + value)
 				})
 
-				formPreloader.forEach(el => el.classList.add('_preloader-active'))
+				try {
+					const response = await fetch('../../vendor/send.php', {
+						method: 'POST',
+						body: formData,
+					})
 
-				if (response.ok) {
+					if (!response.ok) {
+						throw new Error('Network response was not ok')
+					}
+
 					const result = await response.json()
-					const mes = `<p>${result.message}</p>`
 
-					el.reset()
+					formPopupBodyOrder.classList.add('_hidden')
+					formPopupBodysuccess.classList.remove('_hidden')
 
-					formPreloader.forEach(el => el.classList.remove('_preloader-active'))
-					noteArr.forEach(el => {
-						el.innerHTML = mes
-						el.classList.add('_form-callback-active')
-						setTimeout(() => {
-							el.classList.remove('_form-callback-active')
-						}, 2000)
-					})
-				} else {
-					formPreloader.forEach(el => el.classList.remove('_preloader-active'))
-					noteArr.forEach(el => {
-						el.innerHTML = 'Что-то пошло не так и ничего не отправилось...'
-						el.classList.add('_form-callback-active')
-						setTimeout(() => {
-							el.classList.remove('_form-callback-active')
-						}, 2000)
-					})
+				} catch (error) {
+					console.error('Error during form submission:', error)
+
+					formPopupBodyOrder.classList.add('_hidden')
+					formPopupBodyError.classList.remove('_hidden')
 				}
-			}
+			})
 		})
 	})
 

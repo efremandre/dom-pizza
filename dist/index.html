@@ -148,7 +148,7 @@
                                         <img class="img" src="./assets/images/menu/snacks/Особняк DOM_Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком.jpg" alt="Бочковая сельдь с запеченным картофелем Стоун и маринованным красным луком" loading="lazy" width="385" height="385">
                                     </a>
                                 </div>
-                                <button data-product-id="01" class="card__button-add">
+                                <button data-product-id="01" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -166,7 +166,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Мясные деликатесы по старинным рецептам.jpg" alt="Мясные деликатесы по старинным рецептам" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="02" class="card__button-add">
+                                <button data-product-id="02" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -184,7 +184,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Закуски_Нарезка ростбифа.jpg" alt="Нарезка ростбифа" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="03" class="card__button-add">
+                                <button data-product-id="03" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -202,7 +202,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Паштет из куриной печени с луковым мармеладом и хрустящей чиабатой.jpg" alt="Паштет из куриной печени с луковым мармеладом и хрустящей чиабатой" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="04" class="card__button-add">
+                                <button data-product-id="04" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -220,7 +220,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Сало с Бородинским хлебом горчицей и чесноком.jpg" alt="Сало с Бородинским хлебом горчицей и чесноком" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="05" class="card__button-add">
+                                <button data-product-id="05" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -238,7 +238,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Свежие овощи со сметанным соусом.jpg" alt="Свежие овощи со сметанным соусом" loading="lazy" decoding="async" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="06" class="card__button-add">
+                                <button data-product-id="06" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -256,7 +256,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Соленья.jpg" alt="Соленья" loading="lazy" width="385">
                                     </a>
                                 </div>
-                                <button data-product-id="07" class="card__button-add">
+                                <button data-product-id="07" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -274,7 +274,7 @@
                                         <img src="./assets/images/menu/snacks/Особняк DOM_Хлебная корзина с маслом.jpg" alt="Хлебная корзина с маслом" loading="lazy" width="385" height="385">
                                     </a>
                                 </div>
-                                <button data-product-id="08" class="card__button-add">
+                                <button data-product-id="08" class="card__button-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+" width="42">
                                 </button>
                                 <div class="card__description">
@@ -342,9 +342,7 @@
                 <h2 class="modal-order__title">Оформление заказа</h2>
                 <div class="modal-order__item-wrapper">
                     <div class="modal-order__item">
-                        <div class="modal-order__order-items">
-
-                        </div>
+                        <div class="modal-order__order-items"></div>
                         <div class="modal-order__form">
                             <p class="modal-order__form-title">Заполните поля</p>
                             <div class="modal-order__form-container form-container">
@@ -372,12 +370,13 @@
                         </h4>
                         <div class="add-to-order__cards">
                             <div class="add-to-order__card">
-                                <p class="add-to-order__card-name">Русская душа под горчичным соусом с пельменями</p>
+                                <p class="add-to-order__card-name">Под горчичным соусом с пельменями</p>
                                 <div class="add-to-order__image">
                                     <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
                                 </div>
-                                <div class="add-to-order__card-price">1200p</div>
-                                <button class="add-to-order__card-add">
+                                <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
+                                <span class="add-to-order__weight card__weight"><span>40</span>г</span>
+                                <button data-product-id="09" class="add-to-order__card-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+">
                                 </button>
                             </div>
@@ -386,8 +385,9 @@
                                 <div class="add-to-order__image">
                                     <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
                                 </div>
-                                <div class="add-to-order__card-price">1200p</div>
-                                <button class="add-to-order__card-add">
+                                <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
+                                <span class="add-to-order__weight card__weight"><span>40</span>г</span>
+                                <button data-product-id="10" class="add-to-order__card-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+">
                                 </button>
                             </div>
@@ -396,8 +396,9 @@
                                 <div class="add-to-order__image">
                                     <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
                                 </div>
-                                <div class="add-to-order__card-price">1200p</div>
-                                <button class="add-to-order__card-add">
+                                <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
+                                <span class="add-to-order__weight card__weight"><span>40</span>г</span>
+                                <button data-product-id="11" class="add-to-order__card-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+">
                                 </button>
                             </div>
@@ -406,8 +407,9 @@
                                 <div class="add-to-order__image">
                                     <img src="./assets/images/add-to-order/russian-soul.jpg" alt="Русская душа" loading="lazy" width="200">
                                 </div>
-                                <div class="add-to-order__card-price">1200p</div>
-                                <button class="add-to-order__card-add">
+                                <div class="add-to-order__card-price card__price"><span>1200</span>p</div>
+                                <span class="add-to-order__weight card__weight"><span>40</span>г</span>
+                                <button data-product-id="12" class="add-to-order__card-add add-order">
                                     <img src="./assets/images/icon/add.svg" alt="+">
                                 </button>
                             </div>

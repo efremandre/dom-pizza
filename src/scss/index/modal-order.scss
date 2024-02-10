@@ -17,6 +17,13 @@
 	visibility: visible;
 	transition: all .6s;
 
+	&__cart-empty {
+		flex: 1 1 auto;
+		font-weight: 700;
+		font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+		color: #9e9b98;
+	}
+
 
 	&__wrapper {
 		position: relative;
@@ -109,7 +116,7 @@
 
 .order-item {
 	display: grid;
-	grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) repeat(2, auto);
+	grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) 1fr auto;
 	grid-template-rows: 1fr;
 	grid-gap: 0;
 	flex: 0 1 auto;
@@ -165,6 +172,10 @@
 		width: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
 		height: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
 
+		&>img {
+			pointer-events: none;
+		}
+
 		&_mobile {
 			display: none;
 			position: absolute;
@@ -175,6 +186,10 @@
 			padding: 5px;
 			border-radius: 5px;
 			background: var.$mainBg;
+
+			&>img {
+				pointer-events: none;
+			}
 		}
 
 		&>img {
@@ -224,6 +239,10 @@
 .add-to-order {
 	max-width: 1110px;
 	margin: 0 auto 22.5px auto;
+
+	&._hidden {
+		display: none;
+	}
 
 	&__title {
 		display: flex;
@@ -283,6 +302,10 @@
 		margin-bottom: 15px;
 	}
 
+	&__weight {
+		display: none;
+	}
+
 	&__card-add {
 		position: absolute;
 		left: calc(50% - 22.5px);
@@ -293,6 +316,10 @@
 		border-radius: 10px;
 		background: var.$accentColor;
 		transition: background .6s;
+
+		&>img {
+			pointer-events: none;
+		}
 
 		@media (any-hover: hover) {
 			&:hover {

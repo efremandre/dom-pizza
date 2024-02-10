@@ -3,22 +3,19 @@
 export function addToCart() {
 
 	const forCart = {
-		addBtnCard: document.querySelectorAll('.card__button-add'),
+		addBtnCard: document.querySelectorAll('.add-order'),
 		showTotlalQuantity: document.querySelector('.cart__current'),
-		totalCurrentData: JSON.parse(localStorage.getItem('totalCurrentDataDOM')) || {},
-		productsList: JSON.parse(localStorage.getItem('addToCartProductsDOM')) || [],
-		isActiveBtn: [],
 	}
 
 	const showTotalQuantityCartButton = () => {
-		const totalQuantity = forCart.totalCurrentData.totalCurrent || 0
+		const totalCurrentData = JSON.parse(localStorage.getItem('totalCurrentDataDOM')) || {}
+		const totalQuantity = totalCurrentData.totalCurrent || 0
 		forCart.showTotlalQuantity.innerText = totalQuantity
 	}
 
 	showTotalQuantityCartButton()
 
 	forCart.addBtnCard.forEach(el => {
-
 		el.addEventListener('click', (e) => {
 			const targetBtn = e.currentTarget
 			const productId = targetBtn.dataset.productId
@@ -26,50 +23,50 @@ export function addToCart() {
 			const prevElement = targetBtn.previousElementSibling
 			const nextElement = targetBtn.nextElementSibling
 
-			const productImgSrc = prevElement.querySelector('img').src
-			const productName = nextElement.querySelector('.card__name').innerText
-			const productWeight = nextElement.querySelector('.card__weight span').innerText
-			const productPrice = nextElement.querySelector('.card__price span').innerText
+			const productImgSrc = targetBtn.parentNode.querySelector('img').src || prevElement.querySelector('img').src
+			const productName = (targetBtn.parentNode.querySelector('.add-to-order__card-name') || {}).innerText || (nextElement.querySelector('.card__name') || {}).innerText
+			const productWeight = targetBtn.parentNode.querySelector('.card__weight span').innerText
+			const productPrice = targetBtn.parentNode.querySelector('.card__price span').innerText
+			const productPriceSumm = targetBtn.parentNode.querySelector('.card__price span').innerText
 			const productPriceNum = Number(productPrice)
+			const productPriceSummNum = Number(productPriceSumm)
+			const totalCurrentData = JSON.parse(localStorage.getItem('totalCurrentDataDOM')) || {}
+			const productsList = JSON.parse(localStorage.getItem('addToCartProductsDOM')) || []
 
-			let foundProduct = forCart.productsList.find(product => product.productId === productId)
+			let foundProduct = productsList.find(product => product.productId === productId)
 
 			if (foundProduct) {
 				foundProduct.productCurrent++
-				foundProduct.productPriceNum += productPriceNum
+				foundProduct.productPriceSummNum = productPriceNum * foundProduct.productCurrent
 			} else {
 				const product = {
-					buttonAdd: true,
 					productCurrent: 1,
 					productId,
 					productName,
 					productWeight,
 					productPriceNum,
+					productPriceSummNum,
 					productImgSrc,
 				}
 
-				forCart.productsList.push(product)
+				productsList.push(product)
 			}
 
 			let totalSum = 0
 			let totalCurrent = 0
 
-			forCart.productsList.forEach(product => {
-				totalSum += parseFloat(product.productPriceNum) * product.productCurrent
+			productsList.forEach(product => {
+				totalSum += parseFloat(product.productPriceSummNum)
 				totalCurrent += parseFloat(product.productCurrent)
 			})
 
-			forCart.totalCurrentData.totalSum = totalSum
-			forCart.totalCurrentData.totalCurrent = totalCurrent
+			totalCurrentData.totalSum = totalSum
+			totalCurrentData.totalCurrent = totalCurrent
 
-			localStorage.setItem('totalCurrentDataDOM', JSON.stringify(forCart.totalCurrentData))
-			localStorage.setItem('addToCartProductsDOM', JSON.stringify(forCart.productsList))
-
-			console.log(forCart.productsList)
-			console.log(forCart.totalCurrentData)
+			localStorage.setItem('totalCurrentDataDOM', JSON.stringify(totalCurrentData))
+			localStorage.setItem('addToCartProductsDOM', JSON.stringify(productsList))
 
 			showTotalQuantityCartButton()
 		})
-
 	})
 }
