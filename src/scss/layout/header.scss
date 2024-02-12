@@ -6,7 +6,7 @@ $sizeAfterEl: 1.1em;
 
 .header {
 	position: fixed;
-	transition: transform .8s ease;
+	transition: transform .8s ease, background .8s ease;
 
 	&._hidden {
 		transform: translateY(-98%);
@@ -30,7 +30,6 @@ $sizeAfterEl: 1.1em;
 	box-sizing: border-box;
 	padding: 10px 0;
 	color: var.$lightColor;
-	background: var.$mainBg;
 
 	&__wrapper {
 		position: relative;

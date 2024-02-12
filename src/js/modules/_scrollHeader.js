@@ -11,6 +11,9 @@ export function scrollHeader() {
 		const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
 		const containHide = () => header.classList.contains('_hidden')
 		window.addEventListener('scroll', () => {
+			(window.pageYOffset < hero.offsetHeight) ? header.style.background = '' :
+				header.style.background = '#202020'
+
 			if (window.pageYOffset > hero.offsetHeight) {
 				if (scrollPosition() > lastScroll && !containHide()) {
 					header.classList.add('_hidden')

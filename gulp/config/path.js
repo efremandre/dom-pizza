@@ -1,9 +1,9 @@
 // получаем имя папки проекта
-import * as nodePath from 'path';
-const rootFolder = nodePath.basename(nodePath.resolve());
+import * as nodePath from 'path'
+const rootFolder = nodePath.basename(nodePath.resolve())
 
-const buildFolder = './dist';
-const srcFolder = './src';
+const buildFolder = './dist'
+const srcFolder = './src'
 
 export const path = {
 	build: {
@@ -19,7 +19,7 @@ export const path = {
 		html: `${srcFolder}/*.html`,
 		scss: `${srcFolder}/scss/style.scss`,
 		js: `${srcFolder}/js/index.js`,
-		images: `${srcFolder}/assets/images/**/*.{jpg,png,jpeg,gif,webp,ico}`,
+		images: `${srcFolder}/assets/images/**/*.{jpg,png,jpeg,gif,webp,ico,mp4}`,
 		svg: `${srcFolder}/assets/images/**/*.svg`,
 		files: `${srcFolder}/files/**/*.*`,
 		vendor: `${srcFolder}/vendor/**/*.*`,
@@ -28,7 +28,7 @@ export const path = {
 		html: `${srcFolder}/**/*.html`,
 		scss: `${srcFolder}/scss/**/*.scss`,
 		js: `${srcFolder}/js/**/*.js`,
-		images: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
+		images: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp,svg,ico,mp4}`,
 		files: `${srcFolder}/files/**/*.*`,
 		vendor: `${srcFolder}/vendor/**/*.*`,
 	},

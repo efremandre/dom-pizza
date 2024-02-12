@@ -10,6 +10,8 @@ export function modal() {
 	const showTotlalQuantity = document.querySelector('.cart__current')
 
 	const modal = {
+		form: document.querySelector('.modal-order__form'),
+		formMobile: document.querySelector('.modal-order__form_mobile'),
 		formPopupBodyOrder: document.querySelector('.modal-order__item-wrapper'),
 		formPopupBodySuccess: document.querySelector('.messages-done'),
 		formPopupBodyError: document.querySelector('.messages-error'),
@@ -66,9 +68,22 @@ export function modal() {
 		const productList = JSON.parse(localStorage.getItem('addToCartProductsDOM'))
 
 		if (productList === null || productList.length === 0) {
+			modal.form.classList.add('_hidden')
+			modal.formMobile.classList.add('_hidden')
 			modal.modalAddToOrder.classList.add('_hidden')
-			modal.modalProductsWrapper.innerHTML = `<div class="modal-order__cart-empty">Корзина пока пуста :(</div>`
+			modal.modalProductsWrapper.innerHTML = `
+			<div class="modal-order__cart-empty">
+				<p>Корзина пока пуста :(</p>
+				<div class="modal-order__cat">
+					<video width="300" height="300" poster="./assets/images/order-modal/cat.png">
+						<source src="./assets/images/order-modal/cat.mp4" type='video/mp4;'>
+					</video>
+				</div>
+			</div>
+			`
 		} else {
+			modal.form.classList.remove('_hidden')
+			modal.formMobile.classList.remove('_hidden')
 			modal.modalAddToOrder.classList.remove('_hidden')
 			modal.modalProductsWrapper.innerHTML = productList.map(product =>
 				`<div class="modal-order__order-item order-item">
@@ -87,12 +102,12 @@ export function modal() {
 					<div class="order-item__name">${product.productName}</div>
 					<div class="order-item__description-wrapper">
 						<div class="order-item__weight">${product?.productWeight}г</div>
-						<div class="order-item__price order-item__price_mobile">${product.productPriceSummNum}</div>
+						<div class="order-item__price order-item__price_mobile">${product.productPriceSummNum}₽</div>
 					</div>
 				</div>
 				<div class="order-item__current">
 					<div class="order-item__current-wrapper">
-						<div class="order-item__price">${product.productPriceSummNum}</div>
+						<div class="order-item__price">${product.productPriceSummNum}₽</div>
 						<button data-prod-id=${product.productId} class="order-item__close">
 							<img src="../../assets/images/icon/close.svg" alt="Х">
 						</button>

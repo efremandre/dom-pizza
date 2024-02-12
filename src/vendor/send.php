@@ -24,15 +24,16 @@ foreach ($productList as $product) {
         "__________" . "%0A %0A";
 }
 
-$rand = mt_rand();
-$today = date("Y.m.d h:i:s");
+$rand = mt_rand(10000, 99999);
+$today = date("d.m.Y");
+$time = date("H:i");
 
 $token = "5897585110:AAEF-Rxg4jyhUe8CbFJZk-9NI99YitZbO1c";
 $chat_id = "-1001833268569";
 
 $arr = array(
 	'👀 ЗАЯВКА С ФОРМЫ № ' => $rand,
-	'от ' => $today . '%0A',
+	'от ' => $today . ' ' . $time . '%0A',
 	'👽 Имя: ' => $name,
 	'📞 Телефон: ' => $phone,
 	'%0A' . '🛒 Содержимое корзины '. '%0A' . 'Общее кол-во: ' => $totalCurrentString,
@@ -51,7 +52,7 @@ $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_i
 if (!$sendToTelegram) {
     $message = 'Что-то пошло не так <br> и ничего не отправилось :(';
 } else {
-	$message = json_encode(['rand' => $rand, 'today' => $today]);
+	$message = json_encode(['rand' => $rand, 'today' => $today, 'time' => $time]);
 }
 
 $response = ['message' => $message];

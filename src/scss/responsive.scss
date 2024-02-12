@@ -223,6 +223,8 @@
 	}
 
 	.hero {
+		background: url('../../assets/images/hero/hero-bg-mobile.jpg') 75% center / cover no-repeat;
+
 		&__buttons {
 			flex-direction: column;
 			gap: 10px;
@@ -300,6 +302,19 @@
 
 		&__solid {
 			margin: 0 20px;
+		}
+	}
+
+	.footer {
+
+		&__contacts {
+			gap: 10px;
+			flex-direction: column-reverse;
+		}
+
+		.social {
+			width: 100%;
+			max-width: 170px;
 		}
 	}
 }

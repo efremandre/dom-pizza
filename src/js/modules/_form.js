@@ -11,7 +11,8 @@ export function sendForm() {
 
 		const bodySuccess = {
 			orderNumber: document.querySelector('.messages-done__order-number'),
-			orderDate: document.querySelector('.messages-done__date-item'),
+			orderDate: document.querySelector('.messages-done__date-date'),
+			orderTime: document.querySelector('.messages-done__date-time'),
 		}
 
 		forms.forEach(form => {
@@ -46,6 +47,7 @@ export function sendForm() {
 
 					bodySuccess.orderNumber.innerText = `${messages.rand}`
 					bodySuccess.orderDate.innerText = `${messages.today}`
+					bodySuccess.orderTime.innerText = `${messages.time}`
 
 					localStorage.removeItem('totalCurrentDataDOM')
 					localStorage.removeItem('addToCartProductsDOM')
