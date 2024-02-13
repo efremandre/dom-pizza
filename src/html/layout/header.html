@@ -2,26 +2,54 @@
 	<div data-header class="header__navigation navigation">
 		<div class="container">
 			<div class="navigation__wrapper">
-				<div class="navigation__social social">
-					<ul class="social__list">
-						<li>
-							<a href="#" target="_blank" title="Telegram" class="social__link">
-								<img src="../../assets/images/icon/tg.svg" alt="Telegram" width="38">
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank" title="WhatsApp" class="social__link">
-								<img src="../../assets/images/icon/wa.svg" alt="WhatsApp">
-							</a>
-						</li>
-						<li>
-							<a href="https://www.instagram.com/dostavkadomspb/" target="_blank" title="Instagram"
-								class="social__link">
-								<img src="../../assets/images/icon/inst.svg" alt="Instagram">
-							</a>
-						</li>
-					</ul>
+				<div class="navigation__buttons">
+					<div class="navigation__work-time work-time">
+						<div class="work-time__title">Часы доставки</div>
+						<div class="work-time__description">
+							<ul>
+								<li>
+									<span>вс-чт</span>
+									<span class="navigation__dashed"></span>
+									<span>10:00 - 21:00</span>
+								</li>
+								<li>
+									<span>пт</span>
+									<span class="navigation__dashed"></span>
+									<span>10:00 - 22:00</span>
+								</li>
+								<li>
+									<span>сб</span>
+									<span class="navigation__dashed"></span>
+									<span>10:00 - 23:00</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="navigation__social social">
+						<ul class="social__list">
+							<li>
+								<a href="#" target="_blank" title="Telegram" class="social__link">
+									<img src="../../assets/images/icon/tg.svg" alt="Telegram" width="38">
+								</a>
+							</li>
+							<li>
+								<a href="#" target="_blank" title="WhatsApp" class="social__link">
+									<img src="../../assets/images/icon/wa.svg" alt="WhatsApp">
+								</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/dostavkadomspb/" target="_blank" title="Instagram"
+									class="social__link">
+									<img src="../../assets/images/icon/inst.svg" alt="Instagram">
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
+				@@include('../modules/logo.html', {
+				'class-logo-wrapper': 'navigation__logo',
+				'class-logo-link': 'navigation__logo-link'
+				})
 				<div class="navigation__cart cart">
 					<span class="cart__current">0</span>
 					<button class="cart__btn">Корзина</button>

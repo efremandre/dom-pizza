@@ -3,7 +3,7 @@
 @use '../base/extentsions';
 
 .cart {
-	height: 100%;
+	height: auto;
 	padding: clamp(0.3125rem, 0.2125rem + 0.5vw, 0.8125rem) 0;
 	font-weight: 500;
 	text-transform: uppercase;

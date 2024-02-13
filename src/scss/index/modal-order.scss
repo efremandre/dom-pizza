@@ -28,8 +28,22 @@
 		border-radius: 20px;
 		transform: translateY(0);
 		opacity: 1;
-		background: #1a1a1a;
+		background: #0B0B0B;
 		transition: transform .6s, opacity .6s;
+
+		&._empty {
+			.modal-order__item {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+
+			display: grid;
+			place-content: center;
+			align-content: center;
+			max-width: 500px;
+		}
 	}
 
 	&__cart-empty {
@@ -44,6 +58,7 @@
 		width: 100%;
 		max-width: 300px;
 		height: auto;
+		margin: 0 auto;
 	}
 
 	&._hidden {

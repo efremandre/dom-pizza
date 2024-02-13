@@ -5,18 +5,23 @@
 $sizeAfterEl: 1.1em;
 
 .header {
-	position: fixed;
+	position: absolute;
 	transition: transform .8s ease, background .8s ease;
 
-	&._hidden {
-		transform: translateY(-98%);
+	@media screen and (max-width:639px) {
+		position: fixed;
+		background: var.$mainBg;
 	}
 
-	@media screen and (min-width:639px) {
+	&._hidden {
+		transform: scale(.8) translateY(-10px);
+	}
+
+	@media screen and (min-width:839px) {
 		top: 0;
 	}
 
-	@media screen and (max-width:639px) {
+	@media screen and (max-width:839px) {
 		bottom: 0;
 	}
 
@@ -34,5 +39,84 @@ $sizeAfterEl: 1.1em;
 	&__wrapper {
 		position: relative;
 		@include mix.displayFlex(flex, space-between, center);
+	}
+
+	&__buttons {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__dashed {
+		flex: 1 0 auto;
+		display: block;
+		border-bottom: 1px dashed #fff;
+	}
+}
+
+.work-time {
+	height: clamp(1.875rem, 1.625rem + 1.25vw, 3.125rem);
+
+	@media screen and (max-width:839px) {
+		display: none;
+	}
+
+	&__title {
+		display: grid;
+		place-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 10px;
+		pointer-events: none;
+		font-weight: 500;
+		text-transform: uppercase;
+		font-size: 14px;
+		background: var.$accentColor;
+		transition: background .5s;
+	}
+
+	&__description {
+		position: absolute;
+		top: calc(100% + 4px);
+		left: 0;
+		display: none;
+		width: 100%;
+		max-width: 230px;
+		padding: 15px;
+		font-size: 16px;
+		background: #191919;
+
+		&._show {
+			display: block;
+		}
+
+		&>ul {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			&>li {
+				display: flex;
+				line-height: 1em;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+
+			.work-time {
+				&__title {
+					background: #7c0c0a;
+				}
+
+				&__description {
+					display: block;
+				}
+			}
+		}
 	}
 }

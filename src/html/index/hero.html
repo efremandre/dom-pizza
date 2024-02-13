@@ -1,6 +1,34 @@
 <section class="main__hero hero">
 	<div class="container">
 		<div class="hero__wrapper">
+			<div class="hero__header">
+				@@include('../modules/logo.html', {
+				'class-logo-wrapper': 'navigation__logo',
+				'class-logo-link': 'navigation__logo-link'
+				})
+				<div class="work-time">
+					<div class="work-time__title">Часы доставки</div>
+					<div class="work-time__description">
+						<ul>
+							<li>
+								<span>вс-чт</span>
+								<span class="navigation__dashed"></span>
+								<span>10:00 - 21:00</span>
+							</li>
+							<li>
+								<span>пт</span>
+								<span class="navigation__dashed"></span>
+								<span>10:00 - 22:00</span>
+							</li>
+							<li>
+								<span>сб</span>
+								<span class="navigation__dashed"></span>
+								<span>10:00 - 23:00</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<h1 class="hero__title main-title">
 				Доставка <br> Русской кухни<br>
 				<span class="hero__solid"></span>

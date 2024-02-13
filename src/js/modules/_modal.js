@@ -12,6 +12,7 @@ export function modal() {
 	const modal = {
 		form: document.querySelector('.modal-order__form'),
 		formMobile: document.querySelector('.modal-order__form_mobile'),
+		formPopupBody: document.querySelector('.modal-order__wrapper'),
 		formPopupBodyOrder: document.querySelector('.modal-order__item-wrapper'),
 		formPopupBodySuccess: document.querySelector('.messages-done'),
 		formPopupBodyError: document.querySelector('.messages-error'),
@@ -22,6 +23,7 @@ export function modal() {
 		modalAddToOrder: document.querySelector('.add-to-order'),
 		modalProductsWrapper: document.querySelector('.modal-order__order-items'),
 		modalTotalSumm: document.querySelectorAll('.form__price span'),
+		modalTitle: document.querySelector('.modal-order__title'),
 		addBtnCard: document.querySelectorAll('.add-to-order__card-add.add-order'),
 	}
 
@@ -71,12 +73,13 @@ export function modal() {
 			modal.form.classList.add('_hidden')
 			modal.formMobile.classList.add('_hidden')
 			modal.modalAddToOrder.classList.add('_hidden')
+			modal.formPopupBody.classList.add('_empty')
+			modal.modalTitle.innerHTML = 'Корзина пуста :('
 			modal.modalProductsWrapper.innerHTML = `
 			<div class="modal-order__cart-empty">
-				<p>Корзина пока пуста :(</p>
 				<div class="modal-order__cat">
-					<video width="300" height="300" poster="./assets/images/order-modal/cat.png">
-						<source src="./assets/images/order-modal/cat.mp4" type='video/mp4;'>
+					<video width="100" height="100" autoplay="autoplay" loop="loop" poster="../../assets/images/order-modal/cat.png">
+						<source src="../../assets/images/order-modal/cat.mp4" type='video/mp4;'>
 					</video>
 				</div>
 			</div>
@@ -85,6 +88,8 @@ export function modal() {
 			modal.form.classList.remove('_hidden')
 			modal.formMobile.classList.remove('_hidden')
 			modal.modalAddToOrder.classList.remove('_hidden')
+			modal.formPopupBody.classList.remove('_empty')
+			modal.modalTitle.innerHTML = 'Оформление заказа'
 			modal.modalProductsWrapper.innerHTML = productList.map(product =>
 				`<div class="modal-order__order-item order-item">
 				<div class="order-item__image-wrapper">
