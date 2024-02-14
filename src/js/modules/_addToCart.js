@@ -27,7 +27,7 @@ export function addToCart() {
 
 			const productImgSrc = targetBtn.parentNode.querySelector('a img').src || prevElement.querySelector('img').src
 			const productName = (targetBtn.parentNode.querySelector('.add-to-order__card-name') || {}).innerText || (nextElement.querySelector('.card__name') || {}).innerText
-			const productWeight = targetBtn.parentNode.querySelector('.card__weight span').innerText
+			const productWeight = targetBtn.parentNode.querySelector('.card__weight').innerText
 			const productPrice = targetBtn.parentNode.querySelector('.card__price span').innerText
 			const productPriceSumm = targetBtn.parentNode.querySelector('.card__price span').innerText
 			const productPriceNum = Number(productPrice)

@@ -32,6 +32,10 @@
 		transition: transform .6s, opacity .6s;
 
 		&._empty {
+			.modal-order__title {
+				text-align: center;
+			}
+
 			.modal-order__item {
 				flex-direction: column;
 				justify-content: center;
@@ -113,6 +117,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		width: 100%;
 	}
 
 	&__form {
@@ -143,7 +148,7 @@
 
 .order-item {
 	display: grid;
-	grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) 1fr auto;
+	grid-template-columns: clamp(3.125rem, 1.0417rem + 10.4167vw, 9.375rem) 1fr clamp(5.3125rem, 4.125rem + 5.9375vw, 11.25rem);
 	grid-template-rows: 1fr;
 	grid-gap: 0;
 	flex: 0 1 auto;
@@ -184,6 +189,7 @@
 
 	&__current-wrapper {
 		@include mix.displayFlex(flex, space-between, center);
+		gap: 10px;
 	}
 
 	&__price {
@@ -353,8 +359,8 @@
 
 		&>img {
 			pointer-events: none;
-			width: 20px;
-			height: 20px;
+			width: 21px;
+			height: 21px;
 		}
 
 		&:active {

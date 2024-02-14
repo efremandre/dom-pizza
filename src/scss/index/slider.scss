@@ -4,6 +4,7 @@
 @use '../modules/button-dawn';
 
 .slider {
+	margin-top: clamp(1.875rem, 1.625rem + 1.25vw, 3.125rem);
 	background: transparent;
 
 	& .container {
@@ -17,6 +18,7 @@
 	place-content: center;
 	align-items: center;
 	max-height: 100%;
+	min-height: 100px;
 
 	&>img {
 		position: relative;

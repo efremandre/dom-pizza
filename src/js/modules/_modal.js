@@ -78,7 +78,7 @@ export function modal() {
 			modal.modalProductsWrapper.innerHTML = `
 			<div class="modal-order__cart-empty">
 				<div class="modal-order__cat">
-					<video width="100" height="100" autoplay="autoplay" loop="loop" poster="../../assets/images/order-modal/cat.png">
+					<video width="150" height="150" autoplay="autoplay" loop="loop" webkit-playinginline playsinline poster="../../assets/images/order-modal/cat.png">
 						<source src="../../assets/images/order-modal/cat.mp4" type='video/mp4;'>
 					</video>
 				</div>
@@ -105,9 +105,10 @@ export function modal() {
 				</div>
 				<div class="order-item__description">
 					<div class="order-item__name">${product.productName}</div>
-					<div class="order-item__description-wrapper">
-						<div class="order-item__weight">${product?.productWeight}г</div>
-						<div class="order-item__price order-item__price_mobile">${product.productPriceSummNum}₽</div>
+						<div class="order-item__description-wrapper">
+							<div class="order-item__weight">${product?.productWeight}</div>
+							<div class="order-item__price order-item__price_mobile">${product.productPriceSummNum}₽
+						</div>
 					</div>
 				</div>
 				<div class="order-item__current">

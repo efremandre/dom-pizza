@@ -1,36 +1,19 @@
 'use strict'
 
 export function scrollHeader() {
-	let lastScroll = 0
 	let screenWidth = screen.width
 	const header = document.querySelector('[data-header]')
-	const logo = document.querySelector('[data-logo]')
+	const cart = document.querySelector('.cart')
 	const hero = document.querySelector('.hero')
 
-	if (header && hero && screenWidth > 639) {
-		const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
-		const containHide = () => header.classList.contains('_hidden')
+	if (header && hero && screenWidth > 839) {
 		window.addEventListener('scroll', () => {
-			(window.pageYOffset < hero.offsetHeight) ? header.style.background = '' :
-				header.style.background = '#202020'
-
-			if (window.pageYOffset > hero.offsetHeight) {
-				if (scrollPosition() > lastScroll && !containHide()) {
-					header.classList.add('_hidden')
-					logo.classList.add('_hidden')
-				} else if (scrollPosition() < lastScroll && containHide()) {
-					header.classList.remove('_hidden')
-					logo.classList.remove('_hidden')
-				}
-
-				lastScroll = scrollPosition()
-			}
-		})
-
-		header.addEventListener('mouseenter', () => {
-			if (header.classList.contains('_hidden')) {
-				header.classList.remove('_hidden')
-				logo.classList.remove('_hidden')
+			if (window.pageYOffset < hero.offsetHeight) {
+				cart.classList.remove('_fix-bottom')
+				cart.classList.add('_fix-top')
+			} else {
+				cart.classList.add('_fix-bottom')
+				cart.classList.remove('_fix-top')
 			}
 		})
 	}

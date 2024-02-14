@@ -10,7 +10,22 @@
 	font-size: clamp(1rem, 0.875rem + 0.625vw, 1.625rem);
 	color: var.$generalColorText;
 	background: var.$accentColor;
-	transition: background .5s;
+	transition: all .5s;
+
+	&._fix-top {
+		position: fixed;
+		top: 10px;
+		right: 6px;
+	}
+
+
+	&._fix-bottom {
+		position: fixed;
+		bottom: 10px;
+		right: 6px;
+		transform: scale(.9);
+		box-shadow: 0px 5px 22px 2px rgba(32, 32, 32, .3);
+	}
 
 	@media (any-hover: hover) {
 		&:hover {

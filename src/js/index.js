@@ -9,8 +9,12 @@ import { modal } from './modules/_modal.js'
 import { pressDawn } from './modules/_pressDawn.js'
 import { pressUp } from './modules/_pressUp.js'
 import { setColorBtn } from './modules/_setColorBtn.js'
+import { setColorNavigationLink } from './modules/_setColorNavigationLink.js'
+import { scrollHeader } from './modules/_scrollHeader.js'
 
 hello()
+scrollHeader()
+setColorNavigationLink()
 showWorkTime()
 setColorBtn()
 addToCart()
@@ -44,32 +48,4 @@ $('.card__button-add').on('click', function () {
 		}, 1000, function () {
 			$(this).remove()
 		})
-})
-
-document.addEventListener('DOMContentLoaded', function () {
-	const menuLinks = document.querySelectorAll('.menu-navigation__link')
-
-	function isElementInViewport(el) {
-		var rect = el.getBoundingClientRect()
-		return (
-			rect.top >= 0 &&
-			rect.left >= 0 &&
-			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		)
-	}
-
-	function updateActiveLink() {
-		menuLinks.forEach(link => {
-			var sectionId = link.getAttribute('href').slice(1)
-			var section = document.getElementById(sectionId)
-			if (isElementInViewport(section)) {
-				menuLinks.forEach(link => link.classList.remove('_active'))
-				link.classList.add('_active')
-			}
-		})
-	}
-
-	window.addEventListener('scroll', updateActiveLink)
-	updateActiveLink()
 })

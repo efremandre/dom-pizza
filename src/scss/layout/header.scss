@@ -8,13 +8,8 @@ $sizeAfterEl: 1.1em;
 	position: absolute;
 	transition: transform .8s ease, background .8s ease;
 
-	@media screen and (max-width:639px) {
-		position: fixed;
-		background: var.$mainBg;
-	}
-
 	&._hidden {
-		transform: scale(.8) translateY(-10px);
+		position: static;
 	}
 
 	@media screen and (min-width:839px) {
@@ -23,11 +18,13 @@ $sizeAfterEl: 1.1em;
 
 	@media screen and (max-width:839px) {
 		bottom: 0;
+		position: fixed;
+		background: var.$mainBg;
 	}
 
 	left: 0;
 	width: 100%;
-	z-index: 5;
+	z-index: 6;
 	width: 100%;
 }
 
