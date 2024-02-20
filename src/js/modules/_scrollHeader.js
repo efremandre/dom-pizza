@@ -9,11 +9,10 @@ export function scrollHeader() {
 	if (header && hero && screenWidth > 839) {
 		window.addEventListener('scroll', () => {
 			if (window.pageYOffset < hero.offsetHeight) {
-				cart.classList.remove('_fix-bottom')
-				cart.classList.add('_fix-top')
+				// header.style.position = 'relative'
+				header.classList.remove('_fix-bottom')
 			} else {
-				cart.classList.add('_fix-bottom')
-				cart.classList.remove('_fix-top')
+				header.classList.add('_fix-bottom')
 			}
 		})
 	}

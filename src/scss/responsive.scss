@@ -107,6 +107,8 @@
 	}
 
 	.category {
+		padding-top: 45px;
+
 		&__title {
 			margin: 20px 0;
 		}
@@ -268,11 +270,12 @@
 
 		&__link {
 			padding: 5px 10px;
-			font-size: 14px;
 		}
 	}
 
 	.category {
+		padding-top: 30px;
+
 		&__title {
 			margin: 20px 0;
 		}
@@ -290,12 +293,17 @@
 		gap: 10px;
 
 		&__nameplate {
-			top: 5px;
-			right: 5px;
+			top: 3px;
+			right: 3px;
+			font-size: 0;
+			width: 18px;
+			height: 18px;
 		}
 
 		&__nameplate-img {
-			display: none;
+			display: block;
+			width: 10px;
+			height: 10px;
 		}
 
 		&__image {
